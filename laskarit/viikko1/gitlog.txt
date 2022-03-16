@@ -1,0 +1,114 @@
+commit 0fb2ccaae714de512db5812603a650d3b39ef977
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 13:02:16 2022 +0200
+
+    poistettiin file1 ja vaihdettiin file2 nimeä
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ tiedostoja/file3             | 1 +
+ 3 files changed, 1 insertion(+)
+
+commit 76aed2339261eb38a75e0234a94abb4a6067a318
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 12:53:17 2022 +0200
+
+    tehtiin tiedostoja-kansio ja lisättiin filet 1, 2 ja 3
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 6e44368d584c6800bafe10467724a64b4d527305
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 12:37:01 2022 +0200
+
+    tehtiin muutoksia ekaan ja kolmanteen tiedostoon
+
+ eka.txt    | 1 -
+ kolmas.txt | 1 +
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+
+commit 13135857cf6ec38096637affe7b22cee874b0eb4
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 12:33:28 2022 +0200
+
+    vaihdettiin tiedosto.txt nimi eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 5fc3934e3542654de7c48eaa2360ee5ff3bdd632
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 12:32:01 2022 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit d36ade0b38a54c6c947719a4fb37677992d775af
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:45:09 2022 +0200
+
+    poistettiin tekstiä tiedostosta tiedosto.txt
+
+ tiedosto.txt | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+commit 583211702c4208a86082aa7d2c743c4833389c4c
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:44:06 2022 +0200
+
+    lisättiin paljon tekstiä tiedostoon tiedosto.txt
+
+ tiedosto.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+commit 400555a68f7df484e947d6cb602d0a09e9d2769d
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:25:07 2022 +0200
+
+    lisättiin stuff ja sen sisälle tiedosto
+
+ stuff/stufftiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1349fed95e282278d3252890913f9fbe4521d9f5
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:22:47 2022 +0200
+
+    muutettiin toinen.txt ja kolmas.txt sisältöjä
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 3d55bbc755728c89fec9de7050ce909e8e702165
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:18:58 2022 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1da736b6e1166ce8b62ab43ffc29c535cf5fac79
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 11:03:24 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 1671171054a2f58783d3df8577edb4fca4287688
+Author: Lotta Tanner <lotta.tanner@helsinki.fi>
+Date:   Wed Mar 16 10:55:06 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
