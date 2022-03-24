@@ -7,3 +7,5 @@
 hehehehe
 
 epäsynkroonitesti
+
+[vaatimusmäärittely](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
