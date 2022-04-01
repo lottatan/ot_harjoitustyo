@@ -2,16 +2,21 @@
 
 class PurchaseRepository:
     def __init__(self):
-        pass
+        self.purchases = []
+        self.used = 0
 
     def show_all_by_username(self):
         pass
 
-    def add_purchase(self):
-        pass
+#lisätään ostos muodossa (tyyppi, hinta)
+    def add_purchase(self, purchase):
+        self.purchases.append(purchase)
+        self.used += purchase[1]
 
-    def delete_purchase(self):
-        pass
+    def delete_purchase(self, purchase):
+        self.purchases.remove(purchase)
+        self.used -= purchase[1]
 
     def delete_all_purchases(self):
-        pass
+        self.purchases = []
+        self.used = 0

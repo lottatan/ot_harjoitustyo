@@ -15,3 +15,11 @@ class TestUser(unittest.TestCase):
 
     def test_password_is_correct(self, password):
         self.assertEqual(self.user.password, password)
+
+
+class TestBudget(unittest.Testcase):
+    def setup(self):
+        self.budget = Budget()
+
+    def test_budget_is_correct(self, budget):
+        self.assertEqual(self.budget.budget, budget)
