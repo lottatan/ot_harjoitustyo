@@ -1,8 +1,20 @@
 from entities.user import User
 
 class UserRepository:
-    def __init__(self):
-        self.user_repository = []
+    def __init_(self):
+        pass
 
-    def create(self, username, password):
-        self.user_repository.append((username, password))
+    def create_user(self, user):
+        pass
+
+    def find_user(self, user):
+        pass
+
+    def delete_user(self, user):
+        pass
+
+    def find_all_users(self):
+        pass
+
+    def delete_all_users():
+        pass
