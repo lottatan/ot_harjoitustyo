@@ -1,3 +1,6 @@
+from pathlib import Path
+
+
 from entities.purchase import Purchase
 from repositories.user_repository import UserRepository
 
