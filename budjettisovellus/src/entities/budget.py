@@ -9,4 +9,7 @@ class Budget:
         self.budget = budget
 
     def remaining_budget(self):
-        self.remaining = self.budget - self.used
+        if self.budget - self.used >= 0:
+            self.remaining = self.budget - self.used
+        else:
+            self.remaining = 0
