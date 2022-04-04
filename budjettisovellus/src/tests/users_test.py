@@ -10,7 +10,3 @@ class TestUserRepository(unittest.TestCase):
         UserRepository.create_user(self.user)
 
         self.assertEqual(UserRepository.findall()[-1].username, self.user)
-
-    
-
-    
