@@ -19,28 +19,28 @@ class LogIn():
     def _login(self):
         self._frame = ttk.Frame(master= self._root)
 
-        login_label = ttk.Label(master=self._root, text= "Login")
-        login_label.grid(columnspan=2, sticky=constants.W, padx=5, pady=5)
+        login_label = ttk.Label(master=self._frame, text= "Log in")
+        login_label.grid(row= 0, column= 0, sticky=constants.W, padx=5, pady=5)
 
-        username_label = ttk.Label(master=self._root, text= "username: ")
-        self._username_entry = ttk.Entry(master=self._root)
-        username_label.grid(padx=5, pady=5)
-        self._username_entry.grid(row=1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
+        username_label = ttk.Label(master=self._frame, text= "username: ")
+        self._username_entry = ttk.Entry(master=self._frame)
+        username_label.grid(row= 1, column= 0, padx=5, pady=5)
+        self._username_entry.grid(row= 1, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        password_label = ttk.Label(master=self._root, text= "password: ")
-        self._password_entry = ttk.Entry(master=self._root)
-        password_label.grid(padx=5, pady=5)
+        password_label = ttk.Label(master=self._frame, text= "password: ")
+        self._password_entry = ttk.Entry(master=self._frame)
+        password_label.grid(row= 2, column= 0, padx=5, pady=5)
         self._password_entry.grid(row=2, column=1, sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        enter = ttk.Button(master=self._root, text= "Enter")
-        enter.grid(columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
+        enter = ttk.Button(master=self._frame, text= "Enter")
+        enter.grid(row= 3, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        create_label = ttk.Label(master=self._root, text= "Create new user")
+        create_label = ttk.Label(master=self._frame, text= "Create new user")
         
-        create_label.grid(columnspan= 2, sticky=constants.W, padx=5, pady=5)
+        create_label.grid(sticky=constants.W, padx=5, pady=5)
 
 
         self._frame.grid_columnconfigure(0, weight=1, minsize=300)
 
-        create_user_button = ttk.Button(master=self._root, text= "Create", command= self._handle_create_user)
+        create_user_button = ttk.Button(master=self._frame, text= "Create", command= self._handle_create_user)
         create_user_button.grid(columnspan= 2, sticky=(constants.E, constants.W), padx=5, pady=5)
