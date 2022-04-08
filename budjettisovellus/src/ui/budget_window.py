@@ -25,7 +25,7 @@ class BudgetView():
         self._delete_purchase_entry.grid(row= 5, column= 1, padx= 5, pady= 5, sticky= constants.EW)
         delete_purchase_button.grid(row= 5, column= 2, padx= 5, pady= 5, sticky= constants.EW)
 
-window = Tk()
-window.title = "Budget view"
-
-ui = BudgetView(window)    
+class PurchasesList():
+    def __init__(self, root, purchases):
+        self._root = root
+        self._purchases = purchases   

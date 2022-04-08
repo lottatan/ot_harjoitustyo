@@ -13,8 +13,7 @@ class Ui:
     def _show_login(self):
         self._hide_current_view()
 
-        self._current_view = LogIn(self._root, self._create_window, self._budget_window)
-        self._current_view.pack()
+        self._current_view = LogIn(self._root, self._create_window)
 
     def _hide_current_view(self):
         if self._current_view:
@@ -31,4 +30,3 @@ class Ui:
         self._hide_current_view()
         
         self._current_view = BudgetView(self._root)
-        self._current_view.pack()

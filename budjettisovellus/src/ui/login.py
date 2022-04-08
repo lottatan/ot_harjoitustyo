@@ -1,10 +1,9 @@
 from tkinter import Tk, ttk, constants
 
 class LogIn():
-    def __init__(self, root, create_user, budget_window):
+    def __init__(self, root, create_user):
         self._root = root
         self._handle_create_user = create_user
-        self._handle_budget_window = budget_window
         self._frame = None
         self._username_entry = None
         self._username_entry = None
