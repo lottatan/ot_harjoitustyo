@@ -1,13 +1,19 @@
-from entities.user import User
-from repositories.user_repository import UserRepository
+from tkinter import Tk
+from ui.budget_window import BudgetView
+from ui.login import LogIn
+from ui.create_new_user import CreateNew
+from ui.ui import Ui
 
 def main():
-    repo = UserRepository()
-    user = User("user1", "password123")
+    window = Tk()
+    window.title("BudgetApp")
 
-    repo.create_user(user)
+    ui_view = Ui(window)
+    ui_view.start()
 
-    print(repo)
+    window.mainloop()
+
+
 
 if __name__ == "__main__":
     main()

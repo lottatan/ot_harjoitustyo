@@ -1,44 +1,50 @@
 from entities.user import User
+from database_connection import get_database_connection
+
+
+def user_by_row(row):
+    return User(row["username"]) if row else None
 
 class UserRepository:
-    def __init__(self):
-        self.users = {}
+    def __init__(self, connection):
+        self._connection = connection
 
     def create_user(self, user):
-        username = user.username
+        cursor = self._connection.cursor()
+        cursor.execute("INSERT INTO Users (username, password) VALUES (?, ?)", [user.username, user.password])
+        self._connection.commit()
 
-        if username not in self.users:
-            self.users[username] = user
-            return "User created"
-        else:
-            return "User taken"
-
+        return "User created"
 
     def find_user(self, user):
-        username = user.username
+        cursor = self._connection.cursor()
+        
+        cursor.execute("SELECT * FROM Users WHERE username= ?", [user.username])
+        row = cursor.fetchone()
 
-        if username in self.users:
-            return self.users[username]
-        else:
-            return None
-
+        return user_by_row(row)
 
     def find_all_users(self):
-        return self.users
+        cursor = self._connection.cursor()
 
+        cursor.execute("SELECT * FROM Users")
+        rows = cursor.fetchall()
+
+        return list(map(user_by_row, rows))
 
     def delete_user(self, user):
-        username = user.username
-        if username in self.users:
-            self.users.pop(username)
-            return "User deleted"
-        else:
-            return None
+        cursor = self._connection.cursor()
 
+        cursor.execute("DELETE * FROM Users WHERE username= ?", [user.username])
+        self._connection.fetchall()
+
+        return "User deleted"
 
     def delete_all_users(self):
-        self.users = {}
+        cursor = self._connection
 
+        cursor.execute("DELETE * FROM Users")
+        self._connection.commit()
 
-    def __str__(self):
-        return f"{self.users}"
+user_repository = UserRepository(get_database_connection())
+users = user_repository.find_all_users()
