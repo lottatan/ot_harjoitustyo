@@ -15,6 +15,7 @@ class CreateNew():
     def destroy(self):
         self._frame.destroy()
 
+
     def _create(self):
         self._frame = ttk.Frame(master= self._root)
 
