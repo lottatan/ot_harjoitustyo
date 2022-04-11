@@ -13,3 +13,13 @@ ja kuinka paljon sitä on vielä jäljellä
 ### **Asennusohjeet**
 
 1. Aloita asentamalla riippuvuudet koneella, ajamalla seuraava komento koneen terminaalissa:
+
+```bash
+poetry install
+```
+
+2. Sovelluksen voit käynnistää ajamalla seuraava komento koneen terminaalissa:
+
+```bash
+poetry run invoke start
+```
