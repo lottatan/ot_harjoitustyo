@@ -6,6 +6,7 @@ from repositories.user_repository import UserRepository
 class TestUserRepository(unittest.TestCase):
     def setUp(self):
         self.repo = UserRepository()
+        self.repo.delete_all_users()
         self.user = User("user1", "password123")
 
     def test_create_user(self):
@@ -31,4 +32,4 @@ class TestUserRepository(unittest.TestCase):
     def test_delete_all_users(self):
         self.repo.create_user(self.user)
         self.repo.delete_all_users()
-        self.assertEqual(self.repo.users, {})
+        self.assertEqual(len(self.repo), 0)

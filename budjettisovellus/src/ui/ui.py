@@ -32,3 +32,4 @@ class Ui:
         self._hide_current_view()
         
         self._current_view = BudgetView(self._root)
+        self._current_view.pack()

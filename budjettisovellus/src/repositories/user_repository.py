@@ -3,7 +3,7 @@ from database_connection import get_database_connection
 
 
 def user_by_row(row):
-    return User(row["username"]) if row else None
+    return User(row["username"], row["password"]) if row else None
 
 class UserRepository:
     def __init__(self, connection):
@@ -16,10 +16,10 @@ class UserRepository:
 
         return "User created"
 
-    def find_user(self, user):
+    def find_user(self, username):
         cursor = self._connection.cursor()
         
-        cursor.execute("SELECT * FROM Users WHERE username= ?", [user.username])
+        cursor.execute("SELECT * FROM Users WHERE username= ?", [username])
         row = cursor.fetchone()
 
         return user_by_row(row)

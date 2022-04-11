@@ -1,6 +1,5 @@
-from tkinter import E
 from entities.user import User
-from repositories.user_repository import UserRepository
+from repositories.user_repository import user_repository as default_user_repository
 
 class UsernameError(Exception):
     pass
@@ -9,16 +8,23 @@ class InvalidUsernameOrPasswordError(Exception):
     pass
 
 class BudgetServices:
-    def __init__(self, user_repository):
-        self.user_repository = UserRepository
+    def __init__(self, user_repository= default_user_repository):
+        self._user = None
+        self._user_repository = user_repository
 
-    def login(username, password):
-        return False
+    def login(self, username, password):
+        user = self._user_repository.find_user(username)
+        if not user or user[1] != password:
+            raise InvalidUsernameOrPasswordError("Incorrect username or password")
 
-    def create_user(username, password):
-        existing = UserRepository.find_user(username)
+        return user
+
+    def create_user(self, username, password):
+        existing = self._user_repository.find_user(username)
         if existing:
             raise UsernameError("Username taken")
         
-        user = UserRepository.create_user(User(username, password))
+        user = self._user_repository.create_user(User(username, password))
         return user
+
+budget_services = BudgetServices()

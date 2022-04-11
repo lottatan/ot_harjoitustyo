@@ -1,5 +1,5 @@
 from tkinter import ttk, constants, StringVar
-from services.budget_services import BudgetServices, UsernameError
+from services.budget_services import budget_services, UsernameError
 
 class CreateNew():
     def __init__(self, root, login):
@@ -54,7 +54,7 @@ class CreateNew():
         password = self._password_entry.get()
         
         try:
-            BudgetServices.create_user(username, password)
+            budget_services.create_user(username, password)
             self._login()
         except UsernameError:
             self._show_error("Incorrect username or password")
