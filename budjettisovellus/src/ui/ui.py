@@ -8,9 +8,9 @@ class Ui:
         self._current_view = None
 
     def start(self):
-        self._show_login()
+        self._login_window()
 
-    def _show_login(self):
+    def _login_window(self):
         self._hide_current_view()
 
         self._current_view = LogIn(self._root, self._budget_window, self._create_window)
@@ -25,11 +25,11 @@ class Ui:
     def _create_window(self):
         self._hide_current_view()
 
-        self._current_view = CreateNew(self._root, self._show_login)
+        self._current_view = CreateNew(self._root, self._login_window)
         self._current_view.pack()
 
     def _budget_window(self):
         self._hide_current_view()
         
-        self._current_view = BudgetView(self._root)
+        self._current_view = BudgetView(self._root, self._login_window)
         self._current_view.pack()
