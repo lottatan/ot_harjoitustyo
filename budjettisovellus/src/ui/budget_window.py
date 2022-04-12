@@ -29,7 +29,7 @@ class BudgetView():
         logout_button.grid(row=0, column=5, padx=5,
                            pady=5, sticky=constants.EW)
 
-        delete_user_button = ttk.Button(master=self._frame, text="Delete user")
+        delete_user_button = ttk.Button(master=self._frame, text="Delete user", command= self.delete_process)
         delete_user_button.grid(row=1, column=5, padx=5,
                                 pady=5, sticky=constants.EW)
 
@@ -58,8 +58,10 @@ class BudgetView():
         editview_button.grid(row=7, column=1, padx=5,
                              pady=5, sticky=constants.EW)
 
-    def delete_process(self, username):
-        budget_services.delete_user(username)
+    def delete_process(self):
+        user = budget_services.get_current_user()
+        budget_services.delete_user(user.username)
+        
         self._handle_logout()
 
 

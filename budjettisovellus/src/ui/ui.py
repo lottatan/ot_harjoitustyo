@@ -14,8 +14,7 @@ class Ui:
     def _login_window(self):
         self._hide_current_view()
 
-        self._current_view = LogIn(
-            self._root, self._budget_window, self._create_window)
+        self._current_view = LogIn(self._root, self._budget_window, self._create_window)
         self._current_view.pack()
 
     def _hide_current_view(self):
