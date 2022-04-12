@@ -1,17 +1,19 @@
-### 31.3.2022 Tehtiin budjettisovellusta 1.5h
+31.3.2022 Tehtiin budjettisovellusta 1.5h
  
-### 3.4.2022 Tehtiin budjettisovellusta 1h
+3.4.2022 Tehtiin budjettisovellusta 1h
 
-### 4.4.2022 Tehtiin budjettisovellusta 4h
+4.4.2022 Tehtiin budjettisovellusta 4h
 
-### 5.4.2022 Tehtiin budjettisovellusta 2h
+5.4.2022 Tehtiin budjettisovellusta 2h
 
-### 6.4.2022 Tehtiin budjettisovellusta 4h
+6.4.2022 Tehtiin budjettisovellusta 4h
 
-### 8.4.2022 Tehtiin budjettisovellusta 4h
+8.4.2022 Tehtiin budjettisovellusta 4h
 
-### 9.4.2022 Tehtiin budjettisovellusta 1h
+9.4.2022 Tehtiin budjettisovellusta 1h
 
-### 10.4.2022 Tehtiin budjettisovellusta 2h
+10.4.2022 Tehtiin budjettisovellusta 2h
 
-### 11.4.2022 Tehtiin budjettisovellusta 4h
+11.4.2022 Tehtiin budjettisovellusta 4h
+
+12.4.2022 Tehtiin budjettisovellusta 6h
