@@ -52,6 +52,13 @@ class CreateNew():
     def _create_process(self):
         username = self._username_entry.get()
         password = self._password_entry.get()
+
+        if len(username) == 0:
+            self._show_error("Enter username!")
+            return
+        if len(password) == 0:
+            self._show_error("Enter password!")
+            return
         
         try:
             budget_services.create_user(username, password)
@@ -61,7 +68,7 @@ class CreateNew():
 
     def _show_error(self, message):
         self._error_variable.set(message)
-        self._error_label.grid()
+        self._error_label.grid(row= 5, column= 0, padx= 5, pady= 5)
 
     def _hide_error(self):
         self._error_label.grid_remove()

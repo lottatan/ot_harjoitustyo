@@ -58,6 +58,14 @@ class LogIn():
         username = self._username_entry.get()
         password = self._password_entry.get()
 
+        if len(username) == 0:
+            self._show_error("Enter username!")
+            return
+        
+        if len(password) == 0:
+            self._show_error("Enter password!")
+            return
+
         try:
             BudgetServices.login(username, password)
             self._login()
