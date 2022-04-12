@@ -33,3 +33,13 @@ Aloita testaaminen ajamalla seuraava komento koneen terminaalissa:
 ```bash
 poetry run invoke test
 ```
+
+### **Testikattavuus**
+
+Tutki testikattavuutta ajamalla seuraava komento koneen terminaalissa:
+
+```bash
+poetry run invoke coverage-report
+```
+Tämän jälkeen htmlcov-kansiosta löytyy testikattavuusraportti index.html-tiedostosta.
+
