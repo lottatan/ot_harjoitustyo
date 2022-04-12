@@ -17,3 +17,5 @@ Ostosten lisääminen, poistaminen ja näkeminen, sekä budjetin asentaminen ja 
 Myös uuden käyttäjän luonti sovelluksen käyttäjänluontisivulla toimii ja sovelluksesta uloskirjautuminen toimii.
 
 README.md tiedostoa muokattu ja myös pylint asennettu.
+
+Arkkitehtuurista kerrottu enemmän.
