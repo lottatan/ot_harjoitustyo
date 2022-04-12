@@ -1,4 +1,6 @@
 from tkinter import ttk, constants
+from services.budget_services import budget_services
+
 
 class BudgetView():
     def __init__(self, root, handle_logout, purchases_list):
@@ -24,7 +26,7 @@ class BudgetView():
         logout_button = ttk.Button(master= self._frame, text= "Log out", command= self._handle_logout)
         logout_button.grid(row= 0, column= 5, padx= 5, pady= 5, sticky= constants.EW)
 
-        delete_user_button = ttk.Button(master= self._frame, text= "Delete user")
+        delete_user_button = ttk.Button(master= self._frame, text= "Delete user") 
         delete_user_button.grid(row= 1, column= 5, padx= 5, pady= 5, sticky= constants.EW)
 
         self._budget_label = ttk.Label(master= self._frame, text= "Your budget: ")
@@ -42,6 +44,9 @@ class BudgetView():
         editview_button = ttk.Button(master= self._frame, text= "Edit and view", command= self._handle_purchases_list_view)
         editview_button.grid(row= 7, column= 1, padx= 5, pady= 5, sticky= constants.EW)
 
+    def delete_process(self, username):
+        budget_services.delete_user(username)
+        self._handle_logout()
 
 
 class PurchasesView():

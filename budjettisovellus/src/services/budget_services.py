@@ -14,9 +14,12 @@ class BudgetServices:
 
     def login(self, username, password):
         user = self._user_repository.find_user(username)
-        if not user or user[1] != password:
+        if not user or user.password != password:
             raise InvalidUsernameOrPasswordError("Incorrect username or password")
-        return True
+        
+        self._user = user
+
+        return user
 
     def create_user(self, username, password):
         existing = self._user_repository.find_user(username)
@@ -26,7 +29,10 @@ class BudgetServices:
         user = self._user_repository.create_user(User(username, password))
         return user
 
+    def get_current_user(self):
+        return self._user
+
     def delete_user(self, username):
-        pass
+        self._user_repository.delete_user(username)
 
 budget_services = BudgetServices()

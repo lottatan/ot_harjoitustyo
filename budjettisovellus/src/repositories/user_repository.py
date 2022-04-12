@@ -23,7 +23,7 @@ class UserRepository:
         row = cursor.fetchone()
 
         if row:
-            return (row["username"], row["password"])
+            return user_by_row(row)
         else:
             return None
 
