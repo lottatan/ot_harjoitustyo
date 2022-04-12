@@ -12,6 +12,8 @@ Käyttöliittymän teko on myös pantu alulle
 Kirjautumissivu ja käyttäjänluontisivut toimivat. Kirjauduttua sisään aukeaa sivu, josta näkee budjetin, menneet menot ja jäljellä oleva budjetti. Nappia
 painamalla pääsee toiseen ikkunaan, josta voi lisätä ostoksen / poistaa ostoksen ja josta näkee menneet ostokset.
 
+Käyttäjän poistaminen painamalla delete user -nappia myös toimii.
+
 Ostosten lisääminen, poistaminen ja näkeminen, sekä budjetin asentaminen ja siihen liittyvien tietojen näkeminen ei kuitenkaan toimi (vielä).
 
 Myös uuden käyttäjän luonti sovelluksen käyttäjänluontisivulla toimii ja sovelluksesta uloskirjautuminen toimii.
