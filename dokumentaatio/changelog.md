@@ -9,7 +9,10 @@ Käyttöliittymän teko on myös pantu alulle
 
 # VIIKKO 4
 
-Kirjautumissivu ja käyttäjänluontisivut toimivat. Itse sovelluksen käyttöliittymä on alkuvaiheessa, mutta aloitettu.
+Kirjautumissivu ja käyttäjänluontisivut toimivat. Kirjauduttua sisään aukeaa sivu, josta näkee budjetin, menneet menot ja jäljellä oleva budjetti. Nappia
+painamalla pääsee toiseen ikkunaan, josta voi lisätä ostoksen / poistaa ostoksen ja josta näkee menneet ostokset.
+
+Ostosten lisääminen, poistaminen ja näkeminen, sekä budjetin asentaminen ja siihen liittyvien tietojen näkeminen ei kuitenkaan toimi (vielä).
 
 Myös uuden käyttäjän luonti sovelluksen käyttäjänluontisivulla toimii ja sovelluksesta uloskirjautuminen toimii.
 
