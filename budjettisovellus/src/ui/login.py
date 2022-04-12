@@ -1,5 +1,5 @@
 from tkinter import ttk, constants, StringVar
-from services.budget_services import BudgetServices, InvalidUsernameOrPasswordError
+from services.budget_services import budget_services, InvalidUsernameOrPasswordError
 
 class LogIn():
     def __init__(self, root, handle_login, create_user):
@@ -40,7 +40,7 @@ class LogIn():
         self._password_entry = ttk.Entry(master=self._frame)
         self._password_entry.grid(row=4, column=0, sticky=(constants.E, constants.W), padx=5, pady=5)
 
-        enter = ttk.Button(master=self._frame, text= "Enter", command= self._handle_login)
+        enter = ttk.Button(master=self._frame, text= "Enter", command= self._login_process)
         enter.grid(row= 5, columnspan=2, sticky=(constants.E, constants.W), padx=5, pady=5)
 
         create_label = ttk.Label(master=self._frame, text= "Create new user")
@@ -67,14 +67,14 @@ class LogIn():
             return
 
         try:
-            BudgetServices.login(username, password)
-            self._login()
+            budget_services.login(username, password)
+            self._handle_login()
         except InvalidUsernameOrPasswordError:
             self._show_error("Incorrect username or password")
 
     def _show_error(self, message):
         self._error_variable.set(message)
-        self._error_label.grid()
+        self._error_label.grid(row= 0, column= 1, padx= 5, pady= 5)
 
     def _hide_error(self):
         self._error_label.grid_remove()
