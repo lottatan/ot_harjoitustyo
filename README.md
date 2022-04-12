@@ -10,6 +10,8 @@ ja kuinka paljon sitä on vielä jäljellä
 
 [changelog](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/changelog.md)
 
+[arkkitehtuuri](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
 ### **Asennusohjeet**
 
 1. Aloita asentamalla riippuvuudet koneella, ajamalla seuraava komento koneen terminaalissa:
