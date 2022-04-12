@@ -1,6 +1,6 @@
 from ui.login import LogIn
 from ui.create_new_user import CreateNew
-from ui.budget_window import BudgetView
+from ui.budget_window import BudgetView, PurchasesView
 
 class Ui:
     def __init__(self, root):
@@ -31,5 +31,11 @@ class Ui:
     def _budget_window(self):
         self._hide_current_view()
         
-        self._current_view = BudgetView(self._root, self._login_window)
+        self._current_view = BudgetView(self._root, self._login_window, self._purchases_window)
+        self._current_view.pack()
+
+    def _purchases_window(self):
+        self._hide_current_view()
+        
+        self._current_view = PurchasesView(self._root, self._budget_window)
         self._current_view.pack()
