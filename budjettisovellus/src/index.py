@@ -4,6 +4,7 @@ from ui.login import LogIn
 from ui.create_new_user import CreateNew
 from ui.ui import Ui
 
+
 def main():
     window = Tk()
     window.title("BudgetApp")
@@ -12,7 +13,6 @@ def main():
     ui_view.start()
 
     window.mainloop()
-
 
 
 if __name__ == "__main__":

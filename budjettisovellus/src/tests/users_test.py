@@ -16,7 +16,8 @@ class TestUserRepository(unittest.TestCase):
     def test_find_user(self):
         self.repo.create_user(self.user)
         user = self.repo.find_user(self.user.username)
-        self.assertEqual((user.username, user.password), (self.user.username, self.user.password))
+        self.assertEqual((user.username, user.password),
+                         (self.user.username, self.user.password))
 
     def test_find_all_users(self):
         self.repo.create_user(self.user)

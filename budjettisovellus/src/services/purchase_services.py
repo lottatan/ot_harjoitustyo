@@ -3,8 +3,9 @@ from entities.purchase import Purchase
 from repositories.purchase_repository import PurchaseRepository
 from repositories.user_repository import UserRepository
 
+
 class PurchaseService:
-    def __init__(self, purchase_repo= PurchaseRepository, user_repo= UserRepository):
+    def __init__(self, purchase_repo=PurchaseRepository, user_repo=UserRepository):
         self.purchase_repo = purchase_repo
         self.user_repo = user_repo
 

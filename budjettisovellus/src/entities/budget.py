@@ -1,5 +1,6 @@
 from repositories.purchase_repository import PurchaseRepository
 
+
 class Budget:
     def __init__(self):
         self.budget = 0

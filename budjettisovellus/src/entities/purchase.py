@@ -1,4 +1,4 @@
-#Tätä kautta voi luoda uuden ostoksen
+# Tätä kautta voi luoda uuden ostoksen
 
 # purchase_type on ostoksen tunniste, esim. "Kauppalasku" tai "Bussilippu"
 # value on ostoksesta maksettu hinta

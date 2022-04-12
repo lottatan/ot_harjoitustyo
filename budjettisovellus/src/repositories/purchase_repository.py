@@ -12,7 +12,7 @@ class PurchaseRepository:
     def show_all(self, username):
         pass
 
-#lisätään ostos muodossa (id, tyyppi, hinta)
+# lisätään ostos muodossa (id, tyyppi, hinta)
     def add_purchase(self, purchase, username):
         pass
 
