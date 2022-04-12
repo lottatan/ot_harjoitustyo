@@ -25,3 +25,11 @@ poetry install
 ```bash
 poetry run invoke start
 ```
+
+### **Testaaminen**
+
+Aloita testaaminen ajamalla seuraava komento koneen terminaalissa:
+
+```bash
+poetry run invoke test
+```
