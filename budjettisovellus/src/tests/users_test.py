@@ -15,8 +15,8 @@ class TestUserRepository(unittest.TestCase):
 
     def test_find_user(self):
         self.repo.create_user(self.user)
-        user = self.repo.find_user(self.user)
-        self.assertEqual(user.username, "user1")
+        user = self.repo.find_user(self.user.username)
+        self.assertEqual(user, (self.user.username, self.user.password))
 
     def test_find_all_users(self):
         self.repo.create_user(self.user)
@@ -26,10 +26,10 @@ class TestUserRepository(unittest.TestCase):
 
     def test_delete_user(self):
         self.repo.create_user(self.user)
-        delete = self.repo.delete_user(self.user)
+        delete = self.repo.delete_user(self.user.username)
         self.assertEqual(delete, "User deleted")
 
     def test_delete_all_users(self):
         self.repo.create_user(self.user)
-        self.repo.delete_all_users()
-        self.assertEqual(len(self.repo), 0)
+        delete = self.repo.delete_all_users()
+        self.assertEqual(delete, None)

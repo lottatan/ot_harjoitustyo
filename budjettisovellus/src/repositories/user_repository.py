@@ -22,7 +22,10 @@ class UserRepository:
         cursor.execute("SELECT * FROM Users WHERE username= ?", [username])
         row = cursor.fetchone()
 
-        return user_by_row(row)
+        if row:
+            return (row["username"], row["password"])
+        else:
+            return None
 
     def find_all_users(self):
         cursor = self._connection.cursor()
@@ -32,18 +35,17 @@ class UserRepository:
 
         return list(map(user_by_row, rows))
 
-    def delete_user(self, user):
+    def delete_user(self, username):
         cursor = self._connection.cursor()
 
-        cursor.execute("DELETE * FROM Users WHERE username= ?", [user.username])
-        self._connection.fetchall()
+        cursor.execute("DELETE FROM Users WHERE username= ?", [username])
 
         return "User deleted"
 
     def delete_all_users(self):
         cursor = self._connection
 
-        cursor.execute("DELETE * FROM Users")
+        cursor.execute("DELETE FROM Users")
         self._connection.commit()
 
 user_repository = UserRepository(get_database_connection())
