@@ -10,10 +10,10 @@
 
 8.4.2022 Tehtiin budjettisovellusta 4h
 
-9.4.2022 Tehtiin budjettisovellusta 1h
+9.4.2022 Tehtiin budjettisovellusta 1h (ui päivityksiä)
 
-10.4.2022 Tehtiin budjettisovellusta 2h
+10.4.2022 Tehtiin budjettisovellusta 2h (ui päivityksiä)
 
-11.4.2022 Tehtiin budjettisovellusta 4h
+11.4.2022 Tehtiin budjettisovellusta 4h (ui päivityksiä)
 
-12.4.2022 Tehtiin budjettisovellusta 6h
+12.4.2022 Tehtiin budjettisovellusta 6h (testit saatiin taas toimimaan ja pylint pisteet korkeammalle, ui saatiin myös toimimaan laajemmin)
