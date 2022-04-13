@@ -43,3 +43,8 @@ poetry run invoke coverage-report
 ```
 Tämän jälkeen htmlcov-kansiosta löytyy testikattavuusraportti index.html-tiedostosta.
 
+### **Pylint**
+
+```bash
+poetry run invoke lint
+```
