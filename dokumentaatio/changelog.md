@@ -21,3 +21,7 @@ Myös uuden käyttäjän luonti sovelluksen käyttäjänluontisivulla toimii ja 
 README.md tiedostoa muokattu ja myös pylint asennettu.
 
 Arkkitehtuurista kerrottu enemmän.
+
+# VIIKKO 5
+
+Purchase repository (tietokanta) tehty ja testit menevät myös läpi.
