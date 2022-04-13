@@ -1,5 +1,7 @@
 from entities.user import User
+from entities.purchase import Purchase
 from repositories.user_repository import user_repository as default_user_repository
+from repositories.purchase_repository import purchase_repository as default_purchase_repository
 
 class UsernameError(Exception):
     pass
@@ -8,9 +10,10 @@ class InvalidUsernameOrPasswordError(Exception):
     pass
 
 class BudgetServices:
-    def __init__(self, user_repository= default_user_repository):
+    def __init__(self, user_repository= default_user_repository, purchase_repository= default_purchase_repository):
         self._user = None
         self._user_repository = user_repository
+        self._purchase_repository = purchase_repository
 
     def login(self, username, password):
         user = self._user_repository.find_user(username)
@@ -34,5 +37,18 @@ class BudgetServices:
 
     def delete_user(self, username):
         self._user_repository.delete_user(username)
+
+    def add_purchase(self, purchase, price, category):
+        username = self.get_current_user().username
+        self._purchase_repository.add_purchase(Purchase(purchase, price, category, username))
+
+    def show_all_purchases(self):
+        pass
+
+    def delete_purchase(self):
+        pass
+
+    def delete_all_purchases(self):
+        pass
 
 budget_services = BudgetServices()
