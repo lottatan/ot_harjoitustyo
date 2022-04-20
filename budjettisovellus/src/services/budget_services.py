@@ -43,10 +43,9 @@ class BudgetServices:
         self._purchase_repository.add_purchase(Purchase(purchase, price, category, username))
 
     def show_all_purchases(self):
-        pass
+        username = self.get_current_user().username
+        self._purchase_repository.show_all_purchases(Purchase(username))
 
-    def delete_purchase(self):
-        pass
 
     def delete_all_purchases(self):
         pass

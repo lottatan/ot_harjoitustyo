@@ -33,11 +33,11 @@ class Ui:
         self._hide_current_view()
 
         self._current_view = BudgetView(
-            self._root, self._login_window, self._purchases_window)
+            self._root, self._login_window, self._purchases_view)
         self._current_view.pack()
 
-    def _purchases_window(self):
+    def _purchases_view(self):
         self._hide_current_view()
-
+        
         self._current_view = PurchasesView(self._root, self._budget_window)
         self._current_view.pack()

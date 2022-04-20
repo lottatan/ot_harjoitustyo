@@ -26,8 +26,6 @@ class PurchaseRepository:
 
         return "Purchase added"
 
-    def delete_purchase(self, username):
-        pass
 
     def delete_all_purchases(self, username):
         cursor = self._connection.cursor()
