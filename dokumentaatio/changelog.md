@@ -25,3 +25,5 @@ Arkkitehtuurista kerrottu enemmän.
 # VIIKKO 5
 
 Purchase repository (tietokanta) tehty ja testit menevät myös läpi.
+
+Listanäkymä saatu toimimaan numeroilla ja siihen liittyvä scrollbar toimii myös.
