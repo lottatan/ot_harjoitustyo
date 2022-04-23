@@ -29,7 +29,11 @@
 # VIIKKO 5
 15.4.2022 Tehtiin budjettisovellusta 2h (saatiin listanäkymä ja siihen liittyvät "scrollbar" toimimaan)
 
-= yhteensä 2h
+20.4.2022 Tehtiin budjettisovellusta 1h (yritettiin saada Purchases taulu toimimaan)
+
+23.4.2022 Tehtiin budjettisovellusta 2h (Purchases taulu toimii)
+
+= yhteensä 5h
 
 
-# KAIKKIAAN YHTEENSÄ 31,5h
+# KAIKKIAAN YHTEENSÄ 34,5h
