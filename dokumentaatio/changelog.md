@@ -27,3 +27,5 @@ Arkkitehtuurista kerrottu enemmän.
 Purchase repository (tietokanta) tehty ja testit menevät myös läpi.
 
 Listanäkymä saatu toimimaan numeroilla ja siihen liittyvä scrollbar toimii myös.
+
+Purchases taulu toimii.
