@@ -29,3 +29,5 @@ Purchase repository (tietokanta) tehty ja testit menevät myös läpi.
 Listanäkymä saatu toimimaan numeroilla ja siihen liittyvä scrollbar toimii myös.
 
 Purchases taulu toimii.
+
+Ostosten lisääminen toimii ja ne myös näkyvät listassa (ei vielä reaaliajassa vaan näkymästä täytyy ensin poistua ja sitten tulla takaisin).
