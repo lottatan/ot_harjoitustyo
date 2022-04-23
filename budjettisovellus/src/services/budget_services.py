@@ -38,8 +38,7 @@ class BudgetServices:
     def delete_user(self, username):
         self._user_repository.delete_user(username)
 
-    def add_purchase(self, purchase, price, category):
-        username = self.get_current_user().username
+    def add_purchase(self, purchase, price, category, username):
         self._purchase_repository.add_purchase(Purchase(purchase, price, category, username))
 
     def show_all_purchases(self):

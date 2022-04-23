@@ -1,5 +1,6 @@
 from tkinter import ttk, constants, StringVar, Listbox, Scrollbar
 from services.budget_services import budget_services
+from repositories.purchase_repository import purchase_repository
 
 
 class BudgetView():
@@ -73,8 +74,10 @@ class PurchasesView():
         self._categories = ("Appointments", "Bills", "Eating / drinking out", "Groceries", "Leisure", "Necessities", "Shopping", "Subscriptions", "Other")
         self._purchase_entry = None
         self._price_entry = None
+        self._variable = None
         self._error_variable = None
         self._error_label = None
+        self._username = budget_services.get_current_user().username
 
         self.purchases_view()
 
@@ -104,7 +107,10 @@ class PurchasesView():
             master=self._frame, text= "Choose category:")
         self._choose_category_label.grid(row=3, column=0)
 
-        self._category_entry = ttk.OptionMenu(self._frame, StringVar(self._frame), self._categories[0], *self._categories)
+        self._variable = StringVar(self._frame)
+        self._variable.set(self._categories[0])
+        
+        self._category_entry = ttk.OptionMenu(self._frame, self._variable, self._categories[0], *self._categories)
 
         self._category_entry.grid(row= 3, column= 1, sticky=constants.W, padx= 5)
 
@@ -138,8 +144,9 @@ class PurchasesView():
         purchases_scrollbar = Scrollbar(master= self._frame)
         purchases_scrollbar.grid(row= 8, column= 1, padx= 5, pady= 5, sticky= (constants.NS, constants.W))
 
-        for purchase in range(1, 101):
-            purchases_list.insert("end", purchase)
+
+        for i in range(1, 101):
+            purchases_list.insert("end", i)
 
         purchases_list.config(yscrollcommand= purchases_scrollbar.set)
         purchases_scrollbar.config(command= purchases_list.yview)
@@ -153,11 +160,14 @@ class PurchasesView():
 
         self._hide_error()
 
+    def _select_category(self, category):
+        category = self._variable.get()
+        return category
+
     def _add_process(self):
-        category = self._category_entry.get()
+        category = self._select_category(category=None)
         purchase = self._purchase_entry.get()
         price = self._price_entry.get()
-        username = budget_services.get_current_user().username
 
         if len(purchase) == 0:
             self._show_error("Enter purchase!")
@@ -166,7 +176,7 @@ class PurchasesView():
             self._show_error("Enter price!")
             return
 
-        budget_services.add_purchase(purchase, price, category, username)
+        budget_services.add_purchase(purchase, price, category, self._username)
 
     def _show_error(self, message):
         self._error_variable.set(message)

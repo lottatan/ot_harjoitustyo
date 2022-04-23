@@ -16,7 +16,11 @@ class PurchaseRepository:
         cursor.execute("SELECT purchase, price, category, username FROM Purchases WHERE username= ?", [username])
         rows = cursor.fetchall()
 
-        return list(map(purchase_by_row, rows))
+        purchases = []
+        for row in rows:
+            purchases.append((row["purchase"], row["price"], row["category"]))
+
+        return purchases
 
     def add_purchase(self, purchase):
         cursor = self._connection.cursor()
