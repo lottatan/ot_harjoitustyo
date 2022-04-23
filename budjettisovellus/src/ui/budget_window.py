@@ -144,9 +144,10 @@ class PurchasesView():
         purchases_scrollbar = Scrollbar(master= self._frame)
         purchases_scrollbar.grid(row= 8, column= 1, padx= 5, pady= 5, sticky= (constants.NS, constants.W))
 
+        purchases = purchase_repository.show_all_purchases(self._username)
 
-        for i in range(1, 101):
-            purchases_list.insert("end", i)
+        for purchase in purchases:
+            purchases_list.insert("end", purchase)
 
         purchases_list.config(yscrollcommand= purchases_scrollbar.set)
         purchases_scrollbar.config(command= purchases_list.yview)
