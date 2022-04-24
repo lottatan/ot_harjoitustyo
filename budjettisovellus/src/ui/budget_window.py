@@ -47,9 +47,12 @@ class BudgetView():
         self._spent_label.grid(row=4, column=0, padx=5,
                                pady=5, sticky=constants.EW)
         
+        remaining = self._user.budget - spent
+        if remaining < 0:
+            remaining = 0
 
         self._remaining_label = ttk.Label(
-            master=self._frame, text= "Remaining amount: ")
+            master=self._frame, text= f"Remaining amount: {remaining}")
         self._remaining_label.grid(
             row=5, column=0, padx=5, pady=5, sticky=constants.EW)
 
@@ -74,7 +77,7 @@ class PurchasesView():
         self._root = root
         self._frame = None
         self._handle_return = go_back
-        self._categories = ("Appointments", "Bills", "Eating / drinking out", "Groceries", "Leisure", "Necessities", "Shopping", "Subscriptions", "Other")
+        self._categories = ("Appointments", "Bills", "Groceries", "Leisure", "Necessities", "Restaurant", "Shopping", "Subscriptions", "Other")
         self._purchase_entry = None
         self._price_entry = None
         self._variable = None
@@ -104,13 +107,13 @@ class PurchasesView():
         back_button.grid(row=0, column=0, padx=5, pady=5)
 
         self._set_new_budget_label = ttk.Label(master= self._frame, text= "Set new budget:")
-        self._set_new_budget_label.grid(row= 2, column= 0, padx= 5, pady= 5)
+        self._set_new_budget_label.grid(row= 2, column= 0)
 
         self._set_new_budget_entry = ttk.Entry(master= self._frame)
-        self._set_new_budget_entry.grid(row= 2, column= 1)
+        self._set_new_budget_entry.grid(row= 2, column= 1, padx= 5, sticky= constants.W)
 
         self._set_new_budget_button = ttk.Button(master= self._frame, text= "Set", command= self._set_budget)
-        self._set_new_budget_button.grid(row= 2, column= 2, columnspan= 1, padx= 5, sticky= constants.E)
+        self._set_new_budget_button.grid(row= 2, column= 2, columnspan= 1)
 
         self._add_purchase_label = ttk.Label(
             master=self._frame, text="Add purchase:")
