@@ -9,6 +9,7 @@ class BudgetView():
         self._frame = None
         self._handle_logout = handle_logout
         self._handle_purchases_view = purchases_view
+        self._user = budget_services.get_current_user()
 
         self.budget_view()
 
@@ -35,7 +36,7 @@ class BudgetView():
                                 pady=5, sticky=constants.EW)
 
         self._budget_label = ttk.Label(
-            master=self._frame, text="Your budget: ")
+            master=self._frame, text= f"Your budget: {self._user.budget}")
         self._budget_label.grid(row=3, column=0, padx=5,
                                 pady=5, sticky=constants.EW)
 
@@ -60,8 +61,7 @@ class BudgetView():
                              pady=5, sticky=constants.EW)
 
     def delete_process(self):
-        user = budget_services.get_current_user()
-        budget_services.delete_user(user.username)
+        budget_services.delete_user(self._user.username)
         
         self._handle_logout()
 

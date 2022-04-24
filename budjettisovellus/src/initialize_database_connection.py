@@ -13,7 +13,7 @@ def create_tables(connection):
     cursor = connection.cursor()
 
     cursor.execute(
-        "CREATE TABLE Users (username TEXT PRIMARY KEY, password TEXT);")
+        "CREATE TABLE Users (username TEXT PRIMARY KEY, password TEXT, budget INTEGER);")
 
     cursor.execute(
         "CREATE TABLE Purchases (purchase TEXT PRIMARY KEY, price INTEGER, category TEXT, username TEXT);")

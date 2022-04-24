@@ -3,7 +3,7 @@ from database_connection import get_database_connection
 
 
 def user_by_row(row):
-    return User(row["username"], row["password"]) if row else None
+    return User(row["username"], row["password"], row["budget"]) if row else None
 
 
 class UserRepository:
@@ -12,8 +12,8 @@ class UserRepository:
 
     def create_user(self, user):
         cursor = self._connection.cursor()
-        cursor.execute("INSERT INTO Users (username, password) VALUES (?, ?)", [
-                       user.username, user.password])
+        cursor.execute("INSERT INTO Users (username, password, budget) VALUES (?, ?, ?)", [
+                       user.username, user.password, user.budget])
         self._connection.commit()
 
         return "User created"

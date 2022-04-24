@@ -29,7 +29,8 @@ class BudgetServices:
         if existing:
             raise UsernameError("Username taken")
         
-        user = self._user_repository.create_user(User(username, password))
+        starting_budget = 0
+        user = self._user_repository.create_user(User(username, password, starting_budget))
         return user
 
     def get_current_user(self):
