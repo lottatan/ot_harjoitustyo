@@ -46,6 +46,9 @@ class BudgetServices:
         username = self.get_current_user().username
         self._purchase_repository.show_all_purchases(Purchase(username))
 
+    def set_new_budget(self, budget, username):
+        self._user_repository.set_new_budget(budget, username)
+
 
     def delete_all_purchases(self):
         pass

@@ -77,6 +77,7 @@ class PurchasesView():
         self._variable = None
         self._error_variable = None
         self._error_label = None
+        self._set_new_budget_entry = None
         self._username = budget_services.get_current_user().username
 
         self.purchases_view()
@@ -99,50 +100,59 @@ class PurchasesView():
             master=self._frame, text="Back", command=self._handle_return)
         back_button.grid(row=0, column=0, padx=5, pady=5)
 
+        self._set_new_budget_label = ttk.Label(master= self._frame, text= "Set new budget:")
+        self._set_new_budget_label.grid(row= 2, column= 0, padx= 5, pady= 5)
+
+        self._set_new_budget_entry = ttk.Entry(master= self._frame)
+        self._set_new_budget_entry.grid(row= 2, column= 1)
+
+        self._set_new_budget_button = ttk.Button(master= self._frame, text= "Set", command= self._set_budget)
+        self._set_new_budget_button.grid(row= 2, column= 2, columnspan= 1, padx= 5, sticky= constants.E)
+
         self._add_purchase_label = ttk.Label(
             master=self._frame, text="Add purchase:")
-        self._add_purchase_label.grid(row=2, column=0, padx=5, pady=5)
+        self._add_purchase_label.grid(row=3, column=0, padx=5, pady=5)
 
         self._choose_category_label = ttk.Label(
             master=self._frame, text= "Choose category:")
-        self._choose_category_label.grid(row=3, column=0)
+        self._choose_category_label.grid(row=4, column=0)
 
         self._variable = StringVar(self._frame)
         self._variable.set(self._categories[0])
         
         self._category_entry = ttk.OptionMenu(self._frame, self._variable, self._categories[0], *self._categories)
 
-        self._category_entry.grid(row= 3, column= 1, sticky=constants.W, padx= 5)
+        self._category_entry.grid(row= 4, column= 1, sticky=constants.W, padx= 5)
 
         self._purchase_label = ttk.Label(
             master= self._frame, text= "Purchase:")
-        self._purchase_label.grid(row= 4, column= 0, padx= 5, pady=5)
+        self._purchase_label.grid(row= 5, column= 0, padx= 5, pady=5)
 
         self._purchase_entry = ttk.Entry(master=self._frame)
         self._purchase_entry.grid(
-            row=4, column= 1, columnspan= 1, padx=5, sticky= constants.W)
+            row=5, column= 1, columnspan= 1, padx=5, sticky= constants.W)
 
         self._add_price_label = ttk.Label(
             master=self._frame, text="Price:")
-        self._add_price_label.grid(row=5, column=0, padx=5, pady=5)
+        self._add_price_label.grid(row=6, column=0, padx=5, pady=5)
 
         self._price_entry = ttk.Entry(master=self._frame)
         self._price_entry.grid(
-            row=5, column= 1, columnspan=1, padx=5, sticky= constants.W)
+            row=6, column= 1, columnspan=1, padx=5, sticky= constants.W)
 
         add_purchase_button = ttk.Button(master=self._frame, text="Add", command= self._add_process)
         add_purchase_button.grid(
-            row=6, column= 1, columnspan=1, padx= 5, sticky= constants.W)
+            row=7, column= 1, columnspan=1, padx= 5, sticky= constants.W)
 
         self._your_purchases_label = ttk.Label(
             master=self._frame, text= "Your purchases")
-        self._your_purchases_label.grid(row=7, column=0, padx=5, pady=5)
+        self._your_purchases_label.grid(row=8, column=0, padx=5, pady=5)
 
         purchases_list = Listbox(master= self._frame)
-        purchases_list.grid(row= 8, column= 0, padx= 5, pady= 5, sticky= constants.EW)
+        purchases_list.grid(row= 9, column= 0, padx= 5, pady= 5, sticky= constants.EW)
 
         purchases_scrollbar = Scrollbar(master= self._frame)
-        purchases_scrollbar.grid(row= 8, column= 1, padx= 5, pady= 5, sticky= (constants.NS, constants.W))
+        purchases_scrollbar.grid(row= 9, column= 1, padx= 5, pady= 5, sticky= (constants.NS, constants.W))
 
         purchases = purchase_repository.show_all_purchases(self._username)
 
@@ -154,7 +164,7 @@ class PurchasesView():
 
         delete_purchases_button = ttk.Button(master=self._frame, text="Delete purchases")
         delete_purchases_button.grid(
-            row=9, column=0, padx=5, pady=5, sticky=constants.EW)
+            row=10, column=0, padx=5, pady=5, sticky=constants.EW)
 
         
         self._frame.grid_columnconfigure(1, weight=1, minsize=300)
@@ -178,6 +188,11 @@ class PurchasesView():
             return
 
         budget_services.add_purchase(purchase, price, category, self._username)
+    
+    def _set_budget(self):
+        budget = self._set_new_budget_entry.get()
+
+        budget_services.set_new_budget(budget, self._username)
 
     def _show_error(self, message):
         self._error_variable.set(message)
