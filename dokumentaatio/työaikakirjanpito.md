@@ -33,7 +33,9 @@
 
 23.4.2022 Tehtiin budjettisovellusta 2h (Purchases taulu toimii)
 
-= yhteensä 5h
+24.4.2022 Tehtiin budjettisovellusta 1h (Users tablea päivitettiin ja budjetin editointi toimii niin, että uusi budjetti näkyy vasta kun kirjautuu ulos ja sitten takaisin sisään).
+
+= yhteensä 6h
 
 
-# KAIKKIAAN YHTEENSÄ 34,5h
+# KAIKKIAAN YHTEENSÄ 35,5h
