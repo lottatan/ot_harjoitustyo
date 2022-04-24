@@ -47,6 +47,7 @@ class UserRepository:
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Users WHERE username= ?", [username])
+        cursor.execute("DELETE FROM Purchases WHERE username= ?", [username])
 
         return "User deleted"
 
@@ -54,6 +55,7 @@ class UserRepository:
         cursor = self._connection
 
         cursor.execute("DELETE FROM Users")
+        cursor.execute("DELETE FROM Purchases")
         self._connection.commit()
 
 
