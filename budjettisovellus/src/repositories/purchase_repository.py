@@ -30,6 +30,13 @@ class PurchaseRepository:
 
         return "Purchase added"
 
+    def show_sum(self, username):
+        cursor = self._connection.cursor()
+        cursor.execute("SELECT SUM(price) as sum FROM Purchases WHERE username= ?", [username])
+        sum = cursor.fetchone()
+
+        return sum["sum"]
+
 
     def delete_all_purchases(self, username):
         cursor = self._connection.cursor()

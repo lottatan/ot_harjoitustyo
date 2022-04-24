@@ -40,13 +40,16 @@ class BudgetView():
         self._budget_label.grid(row=3, column=0, padx=5,
                                 pady=5, sticky=constants.EW)
 
+        spent = purchase_repository.show_sum(self._user.username)
+
         self._spent_label = ttk.Label(
-            master=self._frame, text="Amount spent: ")
+            master=self._frame, text= f"Amount spent: {spent}")
         self._spent_label.grid(row=4, column=0, padx=5,
                                pady=5, sticky=constants.EW)
+        
 
         self._remaining_label = ttk.Label(
-            master=self._frame, text="Remaining amount: ")
+            master=self._frame, text= "Remaining amount: ")
         self._remaining_label.grid(
             row=5, column=0, padx=5, pady=5, sticky=constants.EW)
 
