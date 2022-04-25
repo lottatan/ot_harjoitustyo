@@ -13,7 +13,7 @@ class TestUserRepository(unittest.TestCase):
         self.purchase_repository = purchase_repository
         self.purchase_repository.delete_all_purchases_from_all_users()
 
-        self.user = User("user1", "password123")
+        self.user = User("user1", "password123", 0)
         self.purchase = Purchase("milk", "2.0", "groceries", self.user.username)
 
     def test_create_user(self):
@@ -23,8 +23,8 @@ class TestUserRepository(unittest.TestCase):
     def test_find_user(self):
         self.user_repository.create_user(self.user)
         user = self.user_repository.find_user(self.user.username)
-        self.assertEqual((user.username, user.password),
-                         (self.user.username, self.user.password))
+        self.assertEqual((user.username, user.password, user.budget),
+                         (self.user.username, self.user.password, self.user.budget))
 
     def test_find_all_users(self):
         self.user_repository.create_user(self.user)
