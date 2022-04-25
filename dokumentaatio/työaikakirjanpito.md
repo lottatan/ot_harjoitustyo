@@ -35,7 +35,9 @@
 
 24.4.2022 Tehtiin budjettisovellusta 2,5h (Users tablea päivitettiin ja budjetin editointi toimii niin, että uusi budjetti näkyy vasta kun kirjautuu ulos ja sitten takaisin sisään).
 
-= yhteensä 7,5h
+25.4.2022 Tehtiin budjettisovellusta 1h (Ostosten poisto toimii niin, että kun ikkunasta lähtee, ne ovat poistuneet). Testikattavuuksia ja pylint pisteitä yms paranneltu.
+
+= yhteensä 8,5h
 
 
-# KAIKKIAAN YHTEENSÄ 37h
+# KAIKKIAAN YHTEENSÄ 38h
