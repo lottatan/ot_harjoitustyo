@@ -50,7 +50,7 @@ class BudgetServices:
         self._user_repository.set_new_budget(budget, username)
 
 
-    def delete_all_purchases(self):
-        pass
+    def delete_all_purchases(self, username):
+        self._purchase_repository.delete_all_purchases(username)
 
 budget_services = BudgetServices()

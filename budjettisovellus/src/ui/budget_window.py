@@ -41,6 +41,9 @@ class BudgetView():
                                 pady=5, sticky=constants.EW)
 
         spent = purchase_repository.show_sum(self._user.username)
+            
+        if spent == None:    
+            spent = 0
 
         self._spent_label = ttk.Label(
             master=self._frame, text= f"Amount spent: {spent}")
@@ -113,7 +116,7 @@ class PurchasesView():
         self._set_new_budget_entry.grid(row= 2, column= 1, padx= 5, sticky= constants.W)
 
         self._set_new_budget_button = ttk.Button(master= self._frame, text= "Set", command= self._set_budget)
-        self._set_new_budget_button.grid(row= 2, column= 2, columnspan= 1)
+        self._set_new_budget_button.grid(row= 2, column= 2, padx= 5, pady= 5, sticky= constants.W)
 
         self._add_purchase_label = ttk.Label(
             master=self._frame, text="Add purchase:")
@@ -168,7 +171,7 @@ class PurchasesView():
         purchases_list.config(yscrollcommand= purchases_scrollbar.set)
         purchases_scrollbar.config(command= purchases_list.yview)
 
-        delete_purchases_button = ttk.Button(master=self._frame, text="Delete purchases")
+        delete_purchases_button = ttk.Button(master=self._frame, text="Delete purchases", command= self._handle_deletions)
         delete_purchases_button.grid(
             row=10, column=0, padx=5, pady=5, sticky=constants.EW)
 
@@ -194,6 +197,9 @@ class PurchasesView():
             return
 
         budget_services.add_purchase(purchase, price, category, self._username)
+
+    def _handle_deletions(self):
+        budget_services.delete_all_purchases(self._username)
     
     def _set_budget(self):
         budget = self._set_new_budget_entry.get()
