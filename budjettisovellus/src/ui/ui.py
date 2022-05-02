@@ -39,5 +39,8 @@ class Ui:
     def _purchases_view(self):
         self._hide_current_view()
         
-        self._current_view = PurchasesView(self._root, self._budget_window)
+        self._current_view = PurchasesView(self._root, self._budget_window, self._handle_new_purchase)
         self._current_view.pack()
+
+    def _handle_new_purchase(self):
+        self._purchases_view()

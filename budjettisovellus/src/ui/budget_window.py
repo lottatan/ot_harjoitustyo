@@ -10,6 +10,8 @@ class BudgetView():
         self._handle_logout = handle_logout
         self._handle_purchases_view = purchases_view
         self._user = budget_services.get_current_user()
+        self._colors = ["purple", "orange", "blue", "grey", "yellow", "pink", "red", "brown", "white"]
+        self._categories = 'appointments', 'bills', 'groceries', "leisure", "necessities", "restaurants", "shopping", "subscriptions", "other", "remaining"
 
         self.budget_view()
 
@@ -41,9 +43,6 @@ class BudgetView():
                                 pady=5, sticky=constants.EW)
 
         spent = purchase_repository.show_sum(self._user.username)
-            
-        if spent == None:    
-            spent = 0
 
         self._spent_label = ttk.Label(
             master=self._frame, text= f"Amount spent: {spent}")
@@ -76,10 +75,11 @@ class BudgetView():
 
 
 class PurchasesView():
-    def __init__(self, root, go_back):
+    def __init__(self, root, go_back, handle_add_purchase):
         self._root = root
         self._frame = None
         self._handle_return = go_back
+        self._handle_add_purchase = handle_add_purchase
         self._categories = ("Appointments", "Bills", "Groceries", "Leisure", "Necessities", "Restaurant", "Shopping", "Subscriptions", "Other")
         self._purchase_entry = None
         self._price_entry = None
@@ -197,6 +197,8 @@ class PurchasesView():
             return
 
         budget_services.add_purchase(purchase, price, category, self._username)
+        self._handle_add_purchase()
+
 
     def _handle_deletions(self):
         budget_services.delete_all_purchases(self._username)

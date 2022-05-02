@@ -1,6 +1,5 @@
 from entities.user import User
 from entities.purchase import Purchase
-from repositories.user_repository import UserRepository
 from database_connection import get_database_connection
 
 def purchase_by_row(row):
