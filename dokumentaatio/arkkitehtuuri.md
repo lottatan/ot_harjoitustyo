@@ -28,3 +28,9 @@ Käyttäjiin liittyvät metodit ovat nimeltään login, create_user, get_current
 Ostoksiin liittyvät metodit ovat nimeltään add_purchase, show_all_purchases ja delete_all_purchases.
 
 Ostoksiin liittyvissä metodeissa annetaan aina parametriksi käyttäjänimi.
+
+
+## Tietojen tallennus tietokantoihin
+
+Sovellus tallentaa tiedot sekä ostoksista että käyttäjistä SQLite-tietokantaan. Ostokset tallennetaan tauluun Purchases ja käyttäjät tauluun Users.
+Molemmat tietokannat ovat konfiguroitu samaan verkkoyhteyteen.
