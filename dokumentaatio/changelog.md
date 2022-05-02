@@ -36,4 +36,6 @@ Users taulua päivitetty ja budjetin muokkaus toimii. Päivitetty tieto näkyy k
 
 # VIIKKO 6
 
-Päivitetty tieto näkyy reaaliajassa ja turhia rivejä ja tiedostoja poistettu.
+Päivitetty tieto ostoslistassa näkyy reaaliajassa ja turhia rivejä ja tiedostoja poistettu.
+
+Myös budjetin päivitys toimii reaaliajassa ja samanlaisten ostosten lisäys tietokantaan onnistuu.
