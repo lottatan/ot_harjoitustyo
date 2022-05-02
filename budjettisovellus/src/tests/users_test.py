@@ -14,7 +14,8 @@ class TestUserRepository(unittest.TestCase):
         self.purchase_repository.delete_all_purchases_from_all_users()
 
         self.user = User("user1", "password123", 0)
-        self.purchase = Purchase("milk", "2.0", "groceries", self.user.username)
+        self.purchase = Purchase(
+            "milk", "2.0", "groceries", self.user.username)
 
     def test_create_user(self):
         new_user = self.user_repository.create_user(self.user)
@@ -50,12 +51,14 @@ class TestUserRepository(unittest.TestCase):
     def test_show_all_purchases(self):
         self.user_repository.create_user(self.user)
         self.purchase_repository.add_purchase(self.purchase)
-        show_all = self.purchase_repository.show_all_purchases(self.purchase.username)
+        show_all = self.purchase_repository.show_all_purchases(
+            self.purchase.username)
         amount = len(show_all)
         self.assertEqual(amount, 1)
 
     def test_delete_all_purchases(self):
         self.user_repository.create_user(self.user)
         self.purchase_repository.add_purchase(self.purchase)
-        delete = self.purchase_repository.delete_all_purchases(self.purchase.username)
+        delete = self.purchase_repository.delete_all_purchases(
+            self.purchase.username)
         self.assertEqual(delete, "All purchases deleted")

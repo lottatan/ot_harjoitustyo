@@ -40,7 +40,8 @@ class UserRepository:
     def set_new_budget(self, budget, username):
         cursor = self._connection.cursor()
 
-        cursor.execute("UPDATE Users SET budget= ? WHERE username= ?", [budget, username])
+        cursor.execute("UPDATE Users SET budget= ? WHERE username= ?", [
+                       budget, username])
         self._connection.commit()
 
     def delete_user(self, username):

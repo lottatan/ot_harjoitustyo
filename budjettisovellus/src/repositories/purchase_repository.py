@@ -2,8 +2,10 @@ from entities.user import User
 from entities.purchase import Purchase
 from database_connection import get_database_connection
 
+
 def purchase_by_row(row):
     return Purchase(row["purchase"], row["price"], row["category"], row["username"]) if row else None
+
 
 class PurchaseRepository:
     def __init__(self, connection):
@@ -12,7 +14,8 @@ class PurchaseRepository:
     def show_all_purchases(self, username):
         cursor = self._connection.cursor()
 
-        cursor.execute("SELECT purchase, price, category, username FROM Purchases WHERE username= ?", [username])
+        cursor.execute(
+            "SELECT purchase, price, category, username FROM Purchases WHERE username= ?", [username])
         rows = cursor.fetchall()
 
         purchases = []
@@ -31,11 +34,11 @@ class PurchaseRepository:
 
     def show_sum(self, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT SUM(price) as sum FROM Purchases WHERE username= ?", [username])
+        cursor.execute(
+            "SELECT SUM(price) as sum FROM Purchases WHERE username= ?", [username])
         sum = cursor.fetchone()
 
         return sum["sum"]
-
 
     def delete_all_purchases(self, username):
         cursor = self._connection.cursor()
