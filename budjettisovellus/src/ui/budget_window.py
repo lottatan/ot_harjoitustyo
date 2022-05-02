@@ -120,12 +120,12 @@ class PurchasesView():
 
         self._set_new_budget_entry = ttk.Entry(master=self._frame)
         self._set_new_budget_entry.grid(
-            row=2, column=1, padx=5, sticky=constants.W)
+            row=2, column= 1, columnspan=1, padx=5, pady=5, sticky=constants.EW)
 
         self._set_new_budget_button = ttk.Button(
             master=self._frame, text="Set", command=self._set_budget)
         self._set_new_budget_button.grid(
-            row=2, column=2, padx=5, pady=5, sticky=constants.W)
+            row=2, column=2, padx=5, pady=15, sticky= constants.E)
 
         self._add_purchase_label = ttk.Label(
             master=self._frame, text="Add purchase:")
