@@ -13,7 +13,11 @@ class InvalidUsernameOrPasswordError(Exception):
 
 
 class BudgetServices:
-    def __init__(self, user_repository=default_user_repository, purchase_repository=default_purchase_repository):
+    def __init__(
+            self,
+            user_repository=default_user_repository,
+            purchase_repository=default_purchase_repository):
+
         self._user = None
         self._user_repository = user_repository
         self._purchase_repository = purchase_repository

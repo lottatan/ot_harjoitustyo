@@ -26,8 +26,7 @@ class UserRepository:
 
         if row:
             return user_by_row(row)
-        else:
-            return None
+        return None
 
     def find_all_users(self):
         cursor = self._connection.cursor()

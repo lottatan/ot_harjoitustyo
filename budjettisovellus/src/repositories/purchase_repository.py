@@ -4,7 +4,9 @@ from database_connection import get_database_connection
 
 
 def purchase_by_row(row):
-    return Purchase(row["purchase"], row["price"], row["category"], row["username"]) if row else None
+    return Purchase(
+        row["purchase"], row["price"], row["category"], row["username"]
+    ) if row else None
 
 
 class PurchaseRepository:
@@ -15,7 +17,8 @@ class PurchaseRepository:
         cursor = self._connection.cursor()
 
         cursor.execute(
-            "SELECT purchase, price, category, username FROM Purchases WHERE username= ?", [username])
+            "SELECT purchase, price, category, username FROM Purchases WHERE username= ?",
+            [username])
         rows = cursor.fetchall()
 
         purchases = []
@@ -27,7 +30,10 @@ class PurchaseRepository:
     def add_purchase(self, purchase):
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO Purchases (purchase, price, category, username) VALUES (?, ?, ?, ?)", [
-                       purchase.purchase, purchase.price, purchase.category, purchase.username])
+                       purchase.purchase,
+                       purchase.price,
+                       purchase.category,
+                       purchase.username])
         self._connection.commit()
 
         return "Purchase added"
