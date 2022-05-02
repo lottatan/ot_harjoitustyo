@@ -11,3 +11,20 @@ budjettiinsa liittyvät tiedot. Entities sisältää käyttäjätiedoston, jota 
 ## Käyttöliittymä
 
 Käyttöliittymässä on 4 erillistä näkymää: 1) Sisäänkirjautuminen, 2) Uuden käyttäjän luonti, 3) Budjettinäkymä, 4) Ostosten muokkaamisikkuna
+
+
+## Sovelluslogiikka
+
+Sovelluksessa on kaksi tietokantaa, jossa toinen pitää kirjaa käyttäjistä ja toinen käyttäjiin liittyvistä ostoksista. Ostoksen ominaisuuksia 
+joita otetaan talteen ovat kategoria, hinta, ostoksen nimi / tyyppi ja käyttäjänimi.
+
+![Screenshot from 2022-05-02 11-11-10](https://user-images.githubusercontent.com/96332972/166204313-8d3f59a5-8dae-472d-aa7b-89d2f2543f4d.png)
+
+
+BudgetServices tiedoston metodit hyödyntävät näitä repositorioita.
+
+Käyttäjiin liittyvät metodit ovat nimeltään login, create_user, get_current_user, set_new_budget ja delete_user.
+
+Ostoksiin liittyvät metodit ovat nimeltään add_purchase, show_all_purchases ja delete_all_purchases.
+
+Ostoksiin liittyvissä metodeissa annetaan aina parametriksi käyttäjänimi.
