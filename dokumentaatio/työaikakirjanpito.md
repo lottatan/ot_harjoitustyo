@@ -43,9 +43,10 @@
 
 27.5.2022 Tehtiin budjettisovellusta 4h (Päivitykset näkyvät reaaliajassa ja turhia rivejä ja tiedostoja poistettu).
 
-2.5.2022 Pylint virheiden tarkistuksia 2h
+2.5.2022 Tehtiin budjettisovellusta 4h (Pylint-virheiden tarkistuksia, ui toimii reaaliajassa kaikilla ikkunoilla kun tietokantoja päivitetään ja 
+purchases taulua muutettiin niin, että samanlaisten ostosten lisäys onnistuu)
 
-= yhteensä 6h
+= yhteensä 8h
 
 
-# KAIKKIAAN YHTEENSÄ 44h
+# KAIKKIAAN YHTEENSÄ 46h
