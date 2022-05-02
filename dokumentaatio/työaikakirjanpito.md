@@ -43,7 +43,9 @@
 
 27.5.2022 Tehtiin budjettisovellusta 4h (Päivitykset näkyvät reaaliajassa ja turhia rivejä ja tiedostoja poistettu).
 
-= yhteensä 4h
+2.5.2022 Pylint virheiden tarkistuksia 2h
+
+= yhteensä 6h
 
 
-# KAIKKIAAN YHTEENSÄ 42h
+# KAIKKIAAN YHTEENSÄ 44h
