@@ -39,5 +39,11 @@
 
 = yhteensä 8,5h
 
+# VIIKKO 6
 
-# KAIKKIAAN YHTEENSÄ 38h
+27.5.2022 Tehtiin budjettisovellusta 4h (Päivitykset näkyvät reaaliajassa ja turhia rivejä ja tiedostoja poistettu).
+
+= yhteensä 4h
+
+
+# KAIKKIAAN YHTEENSÄ 42h
