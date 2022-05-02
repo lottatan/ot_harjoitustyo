@@ -14,6 +14,8 @@ ja kuinka paljon sitä on vielä jäljellä
 
 [releaset](https://github.com/lottatan/ot_harjoitustyo/releases/tag/viikko5)
 
+[käyttöohje](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
+
 ### **Asennusohjeet**
 
 1. Aloita asentamalla riippuvuudet koneella, ajamalla seuraava komento koneen terminaalissa:
