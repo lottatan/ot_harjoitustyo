@@ -43,6 +43,8 @@ class UserRepository:
                        budget, username])
         self._connection.commit()
 
+        return "Budget updated"
+
     def delete_user(self, username):
         cursor = self._connection.cursor()
 

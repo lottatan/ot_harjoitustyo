@@ -58,6 +58,7 @@ class BudgetServices:
 
     def set_new_budget(self, budget, username):
         self._user_repository.set_new_budget(budget, username)
+        self._user.budget = budget
 
     def delete_all_purchases(self, username):
         self._purchase_repository.delete_all_purchases(username)

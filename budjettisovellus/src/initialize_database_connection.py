@@ -16,7 +16,7 @@ def create_tables(connection):
         "CREATE TABLE Users (username TEXT PRIMARY KEY, password TEXT, budget INTEGER);")
 
     cursor.execute(
-        "CREATE TABLE Purchases (purchase TEXT PRIMARY KEY, price INTEGER, category TEXT, username TEXT);")
+        "CREATE TABLE Purchases (id SERIAL PRIMARY KEY, purchase TEXT, price INTEGER, category TEXT, username TEXT);")
 
     connection.commit()
 

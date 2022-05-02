@@ -45,6 +45,8 @@ class BudgetView():
                                 pady=5, sticky=constants.EW)
 
         spent = purchase_repository.show_sum(self._user.username)
+        if spent == None:
+            spent = 0
 
         self._spent_label = ttk.Label(
             master=self._frame, text=f"Amount spent: {spent}")
@@ -214,9 +216,11 @@ class PurchasesView():
         budget_services.delete_all_purchases(self._username)
 
     def _set_budget(self):
-        budget = self._set_new_budget_entry.get()
+        budget = int(self._set_new_budget_entry.get())
 
         budget_services.set_new_budget(budget, self._username)
+        self._handle_add_purchase()
+
 
     def _show_error(self, message):
         self._error_variable.set(message)
