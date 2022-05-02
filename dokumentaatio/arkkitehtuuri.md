@@ -29,6 +29,9 @@ Ostoksiin liittyvät metodit ovat nimeltään add_purchase, show_all_purchases j
 
 Ostoksiin liittyvissä metodeissa annetaan aina parametriksi käyttäjänimi.
 
+![Screenshot from 2022-05-02 13-45-56](https://user-images.githubusercontent.com/96332972/166222558-cd0e6848-d5c2-4ff6-af1b-e1b0c9e48086.png)
+
+
 
 ## Tietojen tallennus tietokantoihin
 
