@@ -33,3 +33,7 @@ Purchases taulu toimii.
 Ostosten lisääminen toimii ja ne myös näkyvät listassa (ei vielä reaaliajassa vaan näkymästä täytyy ensin poistua ja sitten tulla takaisin).
 
 Users taulua päivitetty ja budjetin muokkaus toimii. Päivitetty tieto näkyy kuitenkin vasta kirjauduttua ulos ja sitten takaisin sisään.
+
+# VIIKKO 6
+
+Päivitetty tieto näkyy reaaliajassa ja turhia rivejä ja tiedostoja poistettu.
