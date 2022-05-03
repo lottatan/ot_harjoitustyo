@@ -4,7 +4,16 @@ from repositories.purchase_repository import purchase_repository
 
 
 class BudgetView():
+    """Luokka, joka vastaa budjettitiedoista vastaavan ikkunan näkymästä
+    """    
     def __init__(self, root, handle_logout, purchases_view):
+        """Konstuktori, joka luo budjetti-ikkunan näkymän
+
+        Args:
+            root (Tkinter-elementti): alustaa ikkunan näkymän
+            handle_logout (kutsuttava metodi): hoitaa uloskirjautumisen
+            purchases_view (kutsuttava metodi): hoitaa ikkunan vaihdoksen
+        """        
         self._root = root
         self._frame = None
         self._handle_logout = handle_logout
@@ -17,12 +26,18 @@ class BudgetView():
         self.budget_view()
 
     def pack(self):
+        """Paketoi ikkunan näkymän
+        """        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Rikkoo ikkunan näkymän
+        """        
         self._frame.destroy()
 
     def budget_view(self):
+        """Ikkunan näkymä rakennetaan tämän metodin alla
+        """        
         self._frame = ttk.Frame(master=self._root)
 
         self._window_label = ttk.Label(
@@ -73,13 +88,27 @@ class BudgetView():
                              pady=5, sticky=constants.EW)
 
     def delete_process(self):
+        """Hoitaa käyttäjän poistamisesta vastaavan napin toiminnan
+        """        
         budget_services.delete_user(self._user.username)
 
         self._handle_logout()
 
 
 class PurchasesView():
+    """Luokka, joka vastaa ostosten näyttävästä ja niiden luomisesta vastaavasta ikkunasta
+    """    
     def __init__(self, root, go_back, handle_add_purchase):
+        """Konstruktori, joka luo ostosikkunan näkymän
+
+        Args:
+            root (Tkinter-elementti): alusta ikkunanäkymälle
+            go_back (metodikutsu): hoitaa ikkunanvaihdon edelliseen näkymään
+            handle_add_purchase (metodikutsu): hoitaa ostoksen lisäyksen tietokantaan
+
+        Returns:
+            metodikutsu: kutsuu metodia, jossa ikkuna rakennetaan
+        """        
         self._root = root
         self._frame = None
         self._handle_return = go_back
@@ -97,12 +126,18 @@ class PurchasesView():
         self.purchases_view()
 
     def pack(self):
+        """Pakkaa ikkunanäkymän
+        """        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Rikkoo ikkunanäkymän
+        """        
         self._frame.destroy()
 
     def purchases_view(self):
+        """Tässä metodissa ikkuna rakennetaan
+        """        
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(master=self._frame)
@@ -194,10 +229,20 @@ class PurchasesView():
         self._hide_error()
 
     def _select_category(self, category):
+        """Valitsee kategorian
+
+        Args:
+            category (str): kategoria
+
+        Returns:
+            kategoria: palauttaa kategorian oikeassa muodossa
+        """        
         category = self._variable.get()
         return category
 
     def _add_process(self):
+        """Vastaa ostosten lisäyksen toiminnallisuudesta
+        """        
         category = self._select_category(category=None)
         purchase = self._purchase_entry.get()
         price = self._price_entry.get()
@@ -213,9 +258,13 @@ class PurchasesView():
         self._handle_add_purchase()
 
     def _handle_deletions(self):
+        """Vastaa ostosten poiston toiminnallisuudesta
+        """        
         budget_services.delete_all_purchases(self._username)
 
     def _set_budget(self):
+        """Vastaa uuden budjetin asettamisen toiminnallisuudesta
+        """        
         budget = int(self._set_new_budget_entry.get())
 
         budget_services.set_new_budget(budget, self._username)
@@ -223,8 +272,15 @@ class PurchasesView():
 
 
     def _show_error(self, message):
+        """Näyttää virheen
+
+        Args:
+            message (str): virheilmoitus
+        """        
         self._error_variable.set(message)
         self._error_label.grid(row=7, column=0, padx=5, pady=5)
 
     def _hide_error(self):
+        """Ottaa virheilmoituksen pois näkyvistä
+        """        
         self._error_label.grid_remove()

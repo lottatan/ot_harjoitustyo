@@ -7,10 +7,26 @@ def user_by_row(row):
 
 
 class UserRepository:
+    """Tietokanta, jossa on kaikki käyttäjätiedot
+    """
+
     def __init__(self, connection):
+        """Konstruktori, joka antaa polun tietokantaan
+
+        Args:
+            connection: polku tietokantaan
+        """        
         self._connection = connection
 
     def create_user(self, user):
+        """luo uuden käyttäjän
+
+        Args:
+            user (User): User-olion tyyppinen käyttäjä
+
+        Returns:
+            "User created": viesti, että käyttäjä on luotu
+        """        
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO Users (username, password, budget) VALUES (?, ?, ?)", [
                        user.username, user.password, user.budget])
@@ -19,6 +35,14 @@ class UserRepository:
         return "User created"
 
     def find_user(self, username):
+        """Etsii käyttäjänimen perusteella, että onko käyttäjää olemassa
+
+        Args:
+            username (str): käyttäjänimi
+
+        Returns:
+            User: palauttaa käyttäjän, jos sellainen on olemassa ja None jos ei ole
+        """        
         cursor = self._connection.cursor()
 
         cursor.execute("SELECT * FROM Users WHERE username= ?", [username])
@@ -29,6 +53,11 @@ class UserRepository:
         return None
 
     def find_all_users(self):
+        """Etsii kaikki käyttäjät
+
+        Returns:
+            list: lista kaikista tietokannassa olemassa olevista käyttäjistä
+        """        
         cursor = self._connection.cursor()
 
         cursor.execute("SELECT * FROM Users")
@@ -37,6 +66,15 @@ class UserRepository:
         return list(map(user_by_row, rows))
 
     def set_new_budget(self, budget, username):
+        """Asettaa uuden budjetin käyttäjälle
+
+        Args:
+            budget (int): uuden budjetin koko
+            username (str): sisäänkirjautuneen käyttäjän käyttäjänimi
+
+        Returns:
+            text: viesti, että budjetti on päivitetty
+        """        
         cursor = self._connection.cursor()
 
         cursor.execute("UPDATE Users SET budget= ? WHERE username= ?", [
@@ -46,6 +84,14 @@ class UserRepository:
         return "Budget updated"
 
     def delete_user(self, username):
+        """Poistaa käyttäjän
+
+        Args:
+            username (str): sisäänkirjautuneen käyttäjän käyttäjänimi
+
+        Returns:
+            text: viesti, että käyttäjä on poistettu
+        """        
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Users WHERE username= ?", [username])
@@ -54,6 +100,8 @@ class UserRepository:
         return "User deleted"
 
     def delete_all_users(self):
+        """Poistaa kaikki tietokannassa olemassa olevat käyttäjät
+        """        
         cursor = self._connection
 
         cursor.execute("DELETE FROM Users")

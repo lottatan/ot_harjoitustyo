@@ -3,7 +3,15 @@ from services.budget_services import budget_services, UsernameError
 
 
 class CreateNew():
+    """Luokka, joka vastaa ikkunasta, jossa luodaan uusi käyttäjä
+    """    
     def __init__(self, root, login):
+        """Konstruktori, joka luo ikkunan
+
+        Args:
+            root (Tkinter-elementti): alusta ikkunalle
+            login (metodikutsu): vastaa näkymän vaihdosta takaisin sisäänkirjautumisikkunaan
+        """        
         self._root = root
         self._frame = None
         self._login = login
@@ -15,12 +23,18 @@ class CreateNew():
         self._create()
 
     def pack(self):
+        """Paketoi ikkunan
+        """        
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
+        """Rikkoo ikkunan
+        """        
         self._frame.destroy()
 
     def _create(self):
+        """Ikkuna luodaan tässä metodissa
+        """        
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(master=self._frame)
@@ -59,6 +73,8 @@ class CreateNew():
         self._hide_error()
 
     def _create_process(self):
+        """Vastaa käyttäjän luomisprosessista
+        """        
         username = self._username_entry.get()
         password = self._password_entry.get()
 
@@ -76,8 +92,15 @@ class CreateNew():
             self._show_error("Incorrect username or password")
 
     def _show_error(self, message):
+        """Näyttää virheilmoituksen
+
+        Args:
+            message (str): virheviesti
+        """        
         self._error_variable.set(message)
         self._error_label.grid(row=5, column=0, padx=5, pady=5)
 
     def _hide_error(self):
+        """Piilottaa virheviestin
+        """        
         self._error_label.grid_remove()
