@@ -49,6 +49,10 @@ Molemmat tietokannat ovat konfiguroitu samaan verkkoyhteyteen.
 
 ![Screenshot from 2022-05-03 14-32-25](https://user-images.githubusercontent.com/96332972/166447136-89dcd7fe-2193-4708-b2dd-b72b101c1ce8.png)
 
+### Ostoksen luominen
+
+![Screenshot from 2022-05-03 15-02-13](https://user-images.githubusercontent.com/96332972/166449283-8eab95b0-97d8-4eca-a338-e619fcee7f1d.png)
+
 
 ### Budjetin päivittäminen
 
