@@ -11,13 +11,14 @@ def purchase_by_row(row):
 
 class PurchaseRepository:
     """Luokka, joka vastaa ostosten tietokannasta
-    """    
+    """
+
     def __init__(self, connection):
         """Konstruktori, joka antaa polun tietokantaan
 
         Args:
             connection: polku tietokantaan
-        """    
+        """
         self._connection = connection
 
     def show_all_purchases(self, username):
@@ -28,7 +29,7 @@ class PurchaseRepository:
 
         Returns:
             purchases: palauttaa listan sisäänkirjautuneen käyttäjän ostoksista
-        """        
+        """
         cursor = self._connection.cursor()
 
         cursor.execute(
@@ -50,7 +51,7 @@ class PurchaseRepository:
 
         Returns:
             "Purchase added" : viesti siitä, että ostos on lisätty
-        """        
+        """
         cursor = self._connection.cursor()
         cursor.execute("INSERT INTO Purchases (purchase, price, category, username) VALUES (?, ?, ?, ?)", [
                        purchase.purchase,
@@ -69,7 +70,7 @@ class PurchaseRepository:
 
         Returns:
             sum: ostosten yhteenlaskettu summa
-        """        
+        """
         cursor = self._connection.cursor()
         cursor.execute(
             "SELECT SUM(price) as sum FROM Purchases WHERE username= ?", [username])
@@ -85,7 +86,7 @@ class PurchaseRepository:
 
         Returns:
             "All purchases deleted": viesti, että kaikki ostokset on poistettu
-        """        
+        """
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Purchases WHERE username= ?", [username])
@@ -95,7 +96,7 @@ class PurchaseRepository:
 
     def delete_all_purchases_from_all_users(self):
         """Poistaa tietokannasta kaikkien käyttäjien ostokset
-        """        
+        """
         cursor = self._connection.cursor()
 
         cursor.execute("DELETE FROM Purchases")

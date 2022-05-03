@@ -7,6 +7,7 @@ class Purchase:
             category = ostoksen kategoria
             username = sisäänkirjautuneen käyttäjän käyttäjänimi.
     """
+
     def __init__(self, purchase: str, price: int, category: str, username: str):
         """Konstruktori, joka luo uuden ostoksen.
 

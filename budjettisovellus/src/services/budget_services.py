@@ -14,14 +14,14 @@ class InvalidUsernameOrPasswordError(Exception):
 
 class BudgetServices:
     """Luokka, joka vastaa sovelluksen käyttäjän tekemistä tehtävistä
-    """    
+    """
+
     def __init__(
             self,
             user_repository=default_user_repository,
             purchase_repository=default_purchase_repository):
-
         """Konstruktori, jonka attribuutteina on tietokannat ja käyttäjä
-        """        
+        """
 
         self._user = None
         self._user_repository = user_repository
@@ -39,7 +39,7 @@ class BudgetServices:
 
         Returns:
             User: käyttäjä
-        """        
+        """
         user = self._user_repository.find_user(username)
         if not user or user.password != password:
             raise InvalidUsernameOrPasswordError(
@@ -61,7 +61,7 @@ class BudgetServices:
 
         Returns:
             User: käyttäjä
-        """        
+        """
         existing = self._user_repository.find_user(username)
         if existing:
             raise UsernameError("Username taken")
@@ -76,7 +76,7 @@ class BudgetServices:
 
         Returns:
             User: käyttäjä
-        """        
+        """
         return self._user
 
     def delete_user(self, username):
@@ -84,7 +84,7 @@ class BudgetServices:
 
         Args:
             username (str): käyttäjänimi
-        """        
+        """
         self._user_repository.delete_user(username)
 
     def add_purchase(self, purchase, price, category, username):
@@ -95,13 +95,13 @@ class BudgetServices:
             price (int): ostoksen hinta
             category (str): ostoksen kategoria
             username (str): sisäänkirjautuneen käyttäjän käyttäjänimi
-        """        
+        """
         self._purchase_repository.add_purchase(
             Purchase(purchase, price, category, username))
 
     def show_all_purchases(self):
         """Näyttää kaikki sisäänkirjautuneen käyttäjän ostokset
-        """        
+        """
         username = self.get_current_user().username
         self._purchase_repository.show_all_purchases(Purchase(username))
 
@@ -111,7 +111,7 @@ class BudgetServices:
         Args:
             budget (int): uuden budjetin koko
             username (str): sisäänkirjautuneen käyttäjän käyttäjänimi
-        """        
+        """
         self._user_repository.set_new_budget(budget, username)
         self._user.budget = budget
 
@@ -120,7 +120,7 @@ class BudgetServices:
 
         Args:
             username (str): sisäänkirjautuneen käyttäjän käyttäjänimi
-        """        
+        """
         self._purchase_repository.delete_all_purchases(username)
 
 

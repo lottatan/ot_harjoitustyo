@@ -5,7 +5,8 @@ from repositories.purchase_repository import purchase_repository
 
 class BudgetView():
     """Luokka, joka vastaa budjettitiedoista vastaavan ikkunan näkymästä
-    """    
+    """
+
     def __init__(self, root, handle_logout, purchases_view):
         """Konstuktori, joka luo budjetti-ikkunan näkymän
 
@@ -13,7 +14,7 @@ class BudgetView():
             root (Tkinter-elementti): alustaa ikkunan näkymän
             handle_logout (kutsuttava metodi): hoitaa uloskirjautumisen
             purchases_view (kutsuttava metodi): hoitaa ikkunan vaihdoksen
-        """        
+        """
         self._root = root
         self._frame = None
         self._handle_logout = handle_logout
@@ -27,17 +28,17 @@ class BudgetView():
 
     def pack(self):
         """Paketoi ikkunan näkymän
-        """        
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         """Rikkoo ikkunan näkymän
-        """        
+        """
         self._frame.destroy()
 
     def budget_view(self):
         """Ikkunan näkymä rakennetaan tämän metodin alla
-        """        
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self._window_label = ttk.Label(
@@ -89,7 +90,7 @@ class BudgetView():
 
     def delete_process(self):
         """Hoitaa käyttäjän poistamisesta vastaavan napin toiminnan
-        """        
+        """
         budget_services.delete_user(self._user.username)
 
         self._handle_logout()
@@ -97,7 +98,8 @@ class BudgetView():
 
 class PurchasesView():
     """Luokka, joka vastaa ostosten näyttävästä ja niiden luomisesta vastaavasta ikkunasta
-    """    
+    """
+
     def __init__(self, root, go_back, handle_add_purchase):
         """Konstruktori, joka luo ostosikkunan näkymän
 
@@ -108,7 +110,7 @@ class PurchasesView():
 
         Returns:
             metodikutsu: kutsuu metodia, jossa ikkuna rakennetaan
-        """        
+        """
         self._root = root
         self._frame = None
         self._handle_return = go_back
@@ -127,17 +129,17 @@ class PurchasesView():
 
     def pack(self):
         """Pakkaa ikkunanäkymän
-        """        
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         """Rikkoo ikkunanäkymän
-        """        
+        """
         self._frame.destroy()
 
     def purchases_view(self):
         """Tässä metodissa ikkuna rakennetaan
-        """        
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(master=self._frame)
@@ -155,12 +157,12 @@ class PurchasesView():
 
         self._set_new_budget_entry = ttk.Entry(master=self._frame)
         self._set_new_budget_entry.grid(
-            row=2, column= 1, columnspan=1, padx=5, pady=5, sticky=constants.EW)
+            row=2, column=1, columnspan=1, padx=5, pady=5, sticky=constants.EW)
 
         self._set_new_budget_button = ttk.Button(
             master=self._frame, text="Set", command=self._set_budget)
         self._set_new_budget_button.grid(
-            row=2, column=2, padx=5, pady=15, sticky= constants.E)
+            row=2, column=2, padx=5, pady=15, sticky=constants.E)
 
         self._add_purchase_label = ttk.Label(
             master=self._frame, text="Add purchase:")
@@ -236,13 +238,13 @@ class PurchasesView():
 
         Returns:
             kategoria: palauttaa kategorian oikeassa muodossa
-        """        
+        """
         category = self._variable.get()
         return category
 
     def _add_process(self):
         """Vastaa ostosten lisäyksen toiminnallisuudesta
-        """        
+        """
         category = self._select_category(category=None)
         purchase = self._purchase_entry.get()
         price = self._price_entry.get()
@@ -259,29 +261,28 @@ class PurchasesView():
 
     def _handle_deletions(self):
         """Vastaa ostosten poiston toiminnallisuudesta
-        """        
+        """
         budget_services.delete_all_purchases(self._username)
         self._handle_add_purchase()
 
     def _set_budget(self):
         """Vastaa uuden budjetin asettamisen toiminnallisuudesta
-        """        
+        """
         budget = int(self._set_new_budget_entry.get())
 
         budget_services.set_new_budget(budget, self._username)
         self._handle_add_purchase()
-
 
     def _show_error(self, message):
         """Näyttää virheen
 
         Args:
             message (str): virheilmoitus
-        """        
+        """
         self._error_variable.set(message)
         self._error_label.grid(row=7, column=0, padx=5, pady=5)
 
     def _hide_error(self):
         """Ottaa virheilmoituksen pois näkyvistä
-        """        
+        """
         self._error_label.grid_remove()

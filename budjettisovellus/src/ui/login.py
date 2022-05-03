@@ -4,7 +4,8 @@ from services.budget_services import budget_services, InvalidUsernameOrPasswordE
 
 class LogIn():
     """Luokka, joka vastaa sisäänkirjautumisikkunasta
-    """    
+    """
+
     def __init__(self, root, handle_login, create_user):
         """Konstruktori, joka luo ikkunan
 
@@ -12,7 +13,7 @@ class LogIn():
             root (Tkinter-elementti): alusta ikkunalle
             handle_login (metodikutsu): hoitaa sisäänkirjautumisprosessin
             create_user (metodikutsu): hoitaa ikkunanvaihdoksen käyttäjänluonti-ikkunaan
-        """        
+        """
         self._root = root
         self._handle_create_user = create_user
         self._handle_login = handle_login
@@ -26,17 +27,17 @@ class LogIn():
 
     def pack(self):
         """Paketoi ikkunan
-        """        
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         """Rikkoo ikkunan
-        """        
+        """
         self._frame.destroy()
 
     def _login(self):
         """Ikkuna luodaan tässä metodissa
-        """        
+        """
         self._frame = ttk.Frame(master=self._root)
 
         self._error_variable = StringVar(master=self._frame)
@@ -78,7 +79,7 @@ class LogIn():
 
     def _login_process(self):
         """Hoitaa sisäänkirjautumisprosessin
-        """        
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
 
@@ -102,11 +103,11 @@ class LogIn():
 
         Args:
             message (str): virheviesti
-        """        
+        """
         self._error_variable.set(message)
         self._error_label.grid(row=0, column=1, padx=5, pady=5)
 
     def _hide_error(self):
         """Piilottaa virheviestin
-        """        
+        """
         self._error_label.grid_remove()
