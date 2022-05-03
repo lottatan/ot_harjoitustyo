@@ -46,7 +46,9 @@
 2.5.2022 Tehtiin budjettisovellusta 4h (Pylint-virheiden tarkistuksia, ui toimii reaaliajassa kaikilla ikkunoilla kun tietokantoja päivitetään ja 
 purchases taulua muutettiin niin, että samanlaisten ostosten lisäys onnistuu)
 
-= yhteensä 8h
+3.5.2022 Tehtiin budjettisovellusta 2h (Docstring lisäystä)
+
+= yhteensä 10h
 
 
-# KAIKKIAAN YHTEENSÄ 46h
+# KAIKKIAAN YHTEENSÄ 48h
