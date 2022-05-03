@@ -268,7 +268,13 @@ class PurchasesView():
     def _set_budget(self):
         """Vastaa uuden budjetin asettamisen toiminnallisuudesta
         """
-        budget = int(self._set_new_budget_entry.get())
+        budget = self._set_new_budget_entry.get()
+
+        if len(budget) == 0:
+            self._show_error("Enter budget value!")
+            return
+
+        budget = int(budget)
 
         budget_services.set_new_budget(budget, self._username)
         self._handle_add_purchase()
@@ -280,7 +286,7 @@ class PurchasesView():
             message (str): virheilmoitus
         """
         self._error_variable.set(message)
-        self._error_label.grid(row=7, column=0, padx=5, pady=5)
+        self._error_label.grid(row=3, column=1, padx=5, pady=5)
 
     def _hide_error(self):
         """Ottaa virheilmoituksen pois näkyvistä
