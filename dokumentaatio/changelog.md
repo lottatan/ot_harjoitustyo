@@ -39,3 +39,5 @@ Users taulua päivitetty ja budjetin muokkaus toimii. Päivitetty tieto näkyy k
 Päivitetty tieto ostoslistassa näkyy reaaliajassa ja turhia rivejä ja tiedostoja poistettu.
 
 Myös budjetin päivitys toimii reaaliajassa ja samanlaisten ostosten lisäys tietokantaan onnistuu.
+
+Docstringiä lisätty.
