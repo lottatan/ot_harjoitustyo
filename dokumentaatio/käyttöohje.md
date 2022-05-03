@@ -19,7 +19,7 @@
 ### Sisäänkirjautuminen
 
 Kirjaudu sisään syöttämällä käyttäjätunnus ja salasana niille tarkoitettuihin tekstikenttiin ja paina Enter -näppäintä.
-Mikäli et ole vielä luonut käyttäjätunnusta, paina Create user -näppäintä.
+Mikäli et ole vielä luonut käyttäjätunnusta, paina Create -näppäintä.
 
 ![Screenshot from 2022-05-03 13-36-19](https://user-images.githubusercontent.com/96332972/166439680-ebb28a81-81c1-4e65-bd94-02a1c8d9ab94.png)
 
@@ -34,7 +34,7 @@ Mitään rajoituksia niille ei ole, mutta älä jätä tekstikenttää tyhjäksi
 
 ### Ostosten lisääminen ja poistaminen, sekä budjetin muuttaminen.
 
-Klikkaa budjettisivulla olevaa Edit purchases -näppäintä. Uudessa ikkunassa voit luoda uuden ostoksen valitsemalla sille sopivimman kategorian, asettamalla sille nimen tai tunnisteen ja hinnan. Paina lopuksi Add purchase -näppäintä ja ostos tulee näkyviin alla olevaan listaan.
+Klikkaa budjettisivulla olevaa Edit purchases -näppäintä. Uudessa ikkunassa voit luoda uuden ostoksen valitsemalla sille sopivimman kategorian, asettamalla sille nimen tai tunnisteen ja hinnan. Paina lopuksi Add -näppäintä ja ostos tulee näkyviin alla olevaan listaan.
 
 Ostoksesi voit poistaa painamalla Delete purchases -näppäintä sivun alaosassa.
 
