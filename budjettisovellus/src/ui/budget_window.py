@@ -261,6 +261,7 @@ class PurchasesView():
         """Vastaa ostosten poiston toiminnallisuudesta
         """        
         budget_services.delete_all_purchases(self._username)
+        self._handle_add_purchase()
 
     def _set_budget(self):
         """Vastaa uuden budjetin asettamisen toiminnallisuudesta
