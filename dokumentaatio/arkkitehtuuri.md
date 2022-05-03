@@ -37,3 +37,19 @@ Ostoksiin liittyvissä metodeissa annetaan aina parametriksi käyttäjänimi.
 
 Sovellus tallentaa tiedot sekä ostoksista että käyttäjistä SQLite-tietokantaan. Ostokset tallennetaan tauluun Purchases ja käyttäjät tauluun Users.
 Molemmat tietokannat ovat konfiguroitu samaan verkkoyhteyteen.
+
+
+## Päätoiminnallisuudet
+
+### Käyttäjän luominen
+
+![Screenshot from 2022-05-03 14-25-58](https://user-images.githubusercontent.com/96332972/166447095-f9cc13b7-daa8-477c-9959-846bba0e8183.png)
+
+### Sisäänkirjautuminen
+
+![Screenshot from 2022-05-03 14-32-25](https://user-images.githubusercontent.com/96332972/166447136-89dcd7fe-2193-4708-b2dd-b72b101c1ce8.png)
+
+
+### Budjetin päivittäminen
+
+![Screenshot from 2022-05-03 14-40-43](https://user-images.githubusercontent.com/96332972/166447172-215cca55-eacc-4be4-ae31-dd0b5ba7fcde.png)
