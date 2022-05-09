@@ -27,6 +27,10 @@ class TestUserRepository(unittest.TestCase):
         self.assertEqual((user.username, user.password, user.budget),
                          (self.user.username, self.user.password, self.user.budget))
 
+    def test_user_not_found(self):
+        user = self.user_repository.find_user(self.user.username)
+        self.assertEqual(user, None)
+    
     def test_find_all_users(self):
         self.user_repository.create_user(self.user)
         users = self.user_repository.find_all_users()
@@ -62,3 +66,16 @@ class TestUserRepository(unittest.TestCase):
         delete = self.purchase_repository.delete_all_purchases(
             self.purchase.username)
         self.assertEqual(delete, "All purchases deleted")
+
+    def test_set_new_budget(self):
+        self.user_repository.create_user(self.user)
+        new = self.user_repository.set_new_budget(2, self.user.username)
+
+        self.assertEqual(new, "Budget updated")
+
+    def test_show_sum(self):
+        self.user_repository.create_user(self.user)
+        self.purchase_repository.add_purchase(self.purchase)
+        sum = self.purchase_repository.show_sum(self.user.username)
+
+        self.assertEqual(sum, 2.0)

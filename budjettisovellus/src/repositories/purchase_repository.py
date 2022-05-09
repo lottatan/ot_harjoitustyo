@@ -3,12 +3,6 @@ from entities.purchase import Purchase
 from database_connection import get_database_connection
 
 
-def purchase_by_row(row):
-    return Purchase(
-        row["purchase"], row["price"], row["category"], row["username"]
-    ) if row else None
-
-
 class PurchaseRepository:
     """Luokka, joka vastaa ostosten tietokannasta
     """
