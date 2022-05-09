@@ -30,7 +30,7 @@ class TestUserRepository(unittest.TestCase):
     def test_user_not_found(self):
         user = self.user_repository.find_user(self.user.username)
         self.assertEqual(user, None)
-    
+
     def test_find_all_users(self):
         self.user_repository.create_user(self.user)
         users = self.user_repository.find_all_users()
