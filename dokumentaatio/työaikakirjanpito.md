@@ -50,5 +50,11 @@ purchases taulua muutettiin niin, että samanlaisten ostosten lisäys onnistuu)
 
 = yhteensä 10h
 
+# VIIKKO 7
 
-# KAIKKIAAN YHTEENSÄ 48h
+9.5.2022 Tehtiin budjettisovellusta 1h (Testikattavuus nostettu 70%)
+
+= yhteensä 1h
+
+
+# KAIKKIAAN YHTEENSÄ 49h
