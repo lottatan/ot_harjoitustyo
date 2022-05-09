@@ -12,7 +12,7 @@ ja kuinka paljon sitä on vielä jäljellä
 
 [arkkitehtuuri](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[releaset](https://github.com/lottatan/ot_harjoitustyo/releases/tag/viikko5)
+[releaset](https://github.com/lottatan/ot_harjoitustyo/releases)
 
 [käyttöohje](https://github.com/lottatan/ot_harjoitustyo/blob/master/dokumentaatio/k%C3%A4ytt%C3%B6ohje.md)
 
