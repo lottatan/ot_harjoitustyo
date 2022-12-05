@@ -57,4 +57,4 @@ poetry run invoke lint
 
 ### **Definition of done**
 
-Task on valmis, kun sen testikattavuus on 70%. Taskit on yksikkötestattu.
+Task on valmis, kun sen testikattavuus on 70%. Taskit on yksikkötestattu ja koodi ei sisällä Pylint-virheitä.
