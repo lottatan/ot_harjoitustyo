@@ -55,6 +55,3 @@ Tämän jälkeen htmlcov-kansiosta löytyy testikattavuusraportti index.html-tie
 poetry run invoke lint
 ```
 
-### **Definition of done**
-
-Task on ohjelmoitu, testaus automatisoitu, dokumentoitu backlogille ja integroitu muuhun ohjelmistoon. Task on valmis, kun sen testikattavuus on 70%. Taskit on yksikkötestattu ja koodi ei sisällä Pylint-virheitä.
