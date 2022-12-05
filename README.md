@@ -54,3 +54,7 @@ Tämän jälkeen htmlcov-kansiosta löytyy testikattavuusraportti index.html-tie
 ```bash
 poetry run invoke lint
 ```
+
+### **Definition of done**
+
+Task on valmis, kun sen testikattavuus on 70%. Taskit on yksikkötestattu.
